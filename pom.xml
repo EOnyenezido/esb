@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>esb</groupId>
+  <artifactId>demo_SPF_MPFS_MPFA_using_camel_cxf_amq</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>A Demo of SPF, MPFS and MPFA orchestration using Apache Camel, CXF and AMQ</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- Camel BOM -->
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-parent</artifactId>
+        <version>2.22.0</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-core</artifactId>
+    </dependency>
+    <dependency>
+	  <groupId>org.apache.camel</groupId>
+	  <artifactId>camel-cxf</artifactId>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.camel</groupId>
+	  <artifactId>camel-jetty</artifactId>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.camel</groupId>
+	  <artifactId>camel-jms</artifactId>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.cxf</groupId>
+	  <artifactId>cxf-rt-transports-http-jetty</artifactId>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.activemq</groupId>
+	  <artifactId>activemq-all</artifactId>
+	</dependency>
+	<!-- xbean is needed for ActiveMQ broker XML configuration in Spring XML files -->
+    <dependency>
+       <groupId>org.apache.xbean</groupId>
+       <artifactId>xbean-spring</artifactId>
+    </dependency>
+
+    <!-- logging -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.11.1</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- testing -->
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-test-spring</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+
+      <!-- To run in eclipse via 'mvn camel:run' -->
+      <plugin>
+          <groupId>org.apache.camel</groupId>
+          <artifactId>camel-maven-plugin</artifactId>
+          <version>2.22.0</version>
+      </plugin>
+      
+	  <!-- Generate Java Stubs from WSDL file using CXF -->
+      <plugin>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-codegen-plugin</artifactId>
+          <version>3.2.6</version>
+          <executions>
+              <execution>
+                  <id>generate-sources</id>
+                  <phase>generate-sources</phase>
+                  <configuration>
+                      <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
+                      <wsdlOptions>
+                          <wsdlOption>
+                              <wsdl>${basedir}/src/main/resources/wsdl/ESBaccountmgrService_v_1_0.wsdl</wsdl>
+                              <bindingFiles>
+                            	<bindingFile>${basedir}/src/main/resources/binding/binding.xml</bindingFile>
+                        	  </bindingFiles>
+                          </wsdlOption>
+                      </wsdlOptions>
+                  </configuration>
+                  <goals>
+                      <goal>wsdl2java</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
+      
+
+    </plugins>
+  </build>
+
+</project>
