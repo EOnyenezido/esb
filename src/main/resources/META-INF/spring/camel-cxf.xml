@@ -28,9 +28,24 @@
                      serviceClass="com.huawei.bme.cbsinterface.cbs.accountmgr.CBSInterfaceAccountMgrServicePortType"
                      wsdlURL="classpath:wsdl/ESBaccountmgrService_v_1_0.wsdl"/>
                      
+    <cxf:cxfEndpoint id="mpfsEndpoint"
+                     address="http://localhost:9001/mpfs/"
+                     serviceClass="com.huawei.bme.cbsinterface.bcservices.CBSInterfaceBusinessMgr"
+                     wsdlURL="classpath:wsdl/ESB_BusinessMgr_MPFS_V_1_0_1.wsdl"/>
+                     
     <cxf:cxfEndpoint id="downstreamCBS"
                      address="http://localhost:8088/mockCBS_Server/"
                      serviceClass="com.huawei.bme.cbsinterface.cbs.accountmgr.CBSInterfaceAccountMgrServicePortType"
                      wsdlURL="classpath:wsdl/ESBaccountmgrService_v_1_0.wsdl"/>
+                     
+    <cxf:cxfEndpoint id="downstreamTOPENG"
+                     address="http://localhost:8089/mockTOPENG_Server/"
+                     serviceClass="topeng.esb.TopengEndpoint"
+                     wsdlURL="classpath:wsdl/TOPENG.wsdl"/>
+                     
+    <cxf:cxfEndpoint id="topengEndpoint"
+                     address="http://localhost:9002/topeng/"
+                     serviceClass="topeng.esb.TopengEndpoint"
+                     wsdlURL="classpath:wsdl/TOPENG.wsdl"/>
 
 </beans>

@@ -141,7 +141,7 @@
                       <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
                       <wsdlOptions>
                           <wsdlOption>
-                              <wsdl>${basedir}/src/main/resources/wsdl/ESBaccountmgrService_v_1_0.wsdl</wsdl>
+                              <wsdl>${basedir}/src/main/resources/wsdl/TOPENG.wsdl</wsdl>
                               <bindingFiles>
                             	<bindingFile>${basedir}/src/main/resources/binding/binding.xml</bindingFile>
                         	  </bindingFiles>

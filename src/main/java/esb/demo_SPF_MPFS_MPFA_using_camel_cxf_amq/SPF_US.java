@@ -15,7 +15,7 @@ public class SPF_US extends RouteBuilder {
     public void configure() {
         
         from("cxf:bean:spfEndpoint")
-        	.routeId("spf_us").startupOrder(2) // ensures spf_ds is started first
+        	.routeId("spf_us").startupOrder(10) // ensures spf_ds is started first
         	.to("jms:spf_ds");
         
     }
