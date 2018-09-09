@@ -5,6 +5,7 @@ import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 
 import com.huawei.bme.cbsinterface.bcservices.ChangeSubIdentityRequestMsg;
+import com.huawei.bme.cbsinterface.bcservices.ChangeSubStatusRequestMsg;
 
 import topeng.esb.DeleteSubscriberRequestMsg;
 import topeng.esb.ProvisionSubscriberRequestMsg;
@@ -28,20 +29,26 @@ public class MPFS_US extends RouteBuilder {
         	.routeId("mpfs_us").startupOrder(11) // ensures all ds engines are started first
         	.to("log:initial")
         	.split().method(SplitMPFS.class, "splitChangeSubIdentity").aggregationStrategy(new MPFSAggregationStrategy()) // splits the incoming message into different messages for different downstream systems
-//        	.to("log:split")
+        	.to("log:split")
         	.choice()
         		.when(body().isInstanceOf(DeleteSubscriberRequestMsg.class))
         			.setHeader("operationName", constant("DeleteSubscriber"))
         			.setHeader("operationNamespace", constant("http://esb.topeng"))
         			.setHeader("soapAction", constant("DeleteSubscriber"))
-//        			.to("log:deleteSubscriber")
+        			.to("log:deleteSubscriber")
         			.to("jms:topeng_ds")
         		.when(body().isInstanceOf(ProvisionSubscriberRequestMsg.class))
         			.setHeader("operationName", constant("ProvisionSubscriber"))
     				.setHeader("operationNamespace", constant("http://esb.topeng"))
     				.setHeader("soapAction", constant("ProvisionSubscriber"))
-//        			.to("log:provisionSubscriber")
-        			.to("jms:topeng_ds");
+        			.to("log:provisionSubscriber")
+        			.to("jms:topeng_ds")
+		        .when(body().isInstanceOf(ChangeSubStatusRequestMsg.class))
+					.setHeader("operationName", constant("ChangeSubStatus"))
+					.setHeader("operationNamespace", constant("http://www.huawei.com/bme/cbsinterface/bcservices"))
+					.setHeader("soapAction", constant("ChangeSubStatus"))
+					.to("log:ChangeSubStatus")
+					.to("jms:cbs_mpfs_ds");
         
     }
 }

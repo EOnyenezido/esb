@@ -43,9 +43,9 @@
                      serviceClass="topeng.esb.TopengEndpoint"
                      wsdlURL="classpath:wsdl/TOPENG.wsdl"/>
                      
-    <cxf:cxfEndpoint id="topengEndpoint"
-                     address="http://localhost:9002/topeng/"
-                     serviceClass="topeng.esb.TopengEndpoint"
-                     wsdlURL="classpath:wsdl/TOPENG.wsdl"/>
+    <cxf:cxfEndpoint id="downstreamCBSMPFS"
+                     address="http://localhost:8090/mockMPFS_Server/"
+                     serviceClass="com.huawei.bme.cbsinterface.bcservices.CBSInterfaceBusinessMgr"
+                     wsdlURL="classpath:wsdl/ESB_BusinessMgr_MPFS_V_1_0_1.wsdl"/>
 
 </beans>

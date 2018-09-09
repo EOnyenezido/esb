@@ -4,7 +4,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 
-public class TOPENG_DS extends RouteBuilder {
+public class CBS_MPFS_DS extends RouteBuilder {
 	
 	/**
      * The ALM DS instance exposes two interfaces via JMS, when a message is received it invokes a downstream webservice
@@ -13,9 +13,9 @@ public class TOPENG_DS extends RouteBuilder {
      */
     public void configure() {
         
-        from("jms:topeng_ds")
-        	.routeId("topeng_ds").startupOrder(2) // ensures this is started first before the upstream routes
-        	.to("cxf:bean:downstreamTOPENG");
+        from("jms:cbs_mpfs_ds")
+        	.routeId("cbs_mpfs_ds").startupOrder(3) // ensures this is started first before the upstream routes
+        	.to("cxf:bean:downstreamCBSMPFS");
         
     }
 

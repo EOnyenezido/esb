@@ -23,6 +23,8 @@ import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;
 
 import com.huawei.bme.cbsinterface.bcservices.ChangeSubIdentityResultMsg;
+import com.huawei.bme.cbsinterface.bcservices.ChangeSubStatusRequestMsg;
+import com.huawei.bme.cbsinterface.bcservices.ChangeSubStatusResultMsg;
 import com.huawei.bme.cbsinterface.cbscommon.ResultHeader;
 import com.huawei.bme.cbsinterface.cbscommon.ResultHeader.AdditionalProperty;
 
@@ -40,8 +42,8 @@ public class MPFSAggregationStrategy implements AggregationStrategy {
 
     public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
     	
-        if (oldExchange == null) {  System.out.println("NEW EXCHANGE IN NULL ID: " + newExchange.getExchangeId());      	
-        	
+        if (oldExchange == null) {    	
+        	responseHeader = new ResultHeader(); // clear out the old response header
         	if(newExchange.getIn().getBody(DeleteSubscriberResultMsg.class) instanceof DeleteSubscriberResultMsg)	{
         		resultCode = newExchange.getIn().getBody(DeleteSubscriberResultMsg.class).getCode();
         		if(resultCode.equals(BigInteger.ZERO))	{
@@ -81,6 +83,24 @@ public class MPFSAggregationStrategy implements AggregationStrategy {
     		breakdown.add(responseBreakdown);
     		response.setResultHeader(responseHeader);
             oldExchange.getIn().setBody(response, ChangeSubIdentityResultMsg.class);
+    	}
+        
+        if(newExchange.getIn().getBody(ChangeSubStatusResultMsg.class) instanceof ChangeSubStatusResultMsg)	{
+    		String cbsResultCode = newExchange.getIn().getBody(ChangeSubStatusResultMsg.class).getResultHeader().getResultCode();
+    		if(cbsResultCode.equals("0") && oldExchange.getIn().getBody(ChangeSubIdentityResultMsg.class).getResultHeader().getResultCode().equals("0"))	{
+    			responseHeader.setResultCode("0");
+    			responseHeader.setResultDesc("Operation Successful.");
+    		} else	{
+    			responseHeader.setResultCode("1");
+    			responseHeader.setResultDesc("Operation Failed, please see breakdown below for details.");
+    		}
+    		AdditionalProperty responseBreakdown = new AdditionalProperty();
+    		responseBreakdown.setCode("CBS - ChangeSubStatus");
+    		responseBreakdown.setValue("Result Code: " + cbsResultCode + " | " + "Result Description: " + newExchange.getIn().getBody(ChangeSubStatusResultMsg.class).getResultHeader().getResultDesc());
+    		List<AdditionalProperty> breakdown = responseHeader.getAdditionalProperty();
+    		breakdown.add(responseBreakdown);
+    		response.setResultHeader(responseHeader);
+    		oldExchange.getIn().setBody(response, ChangeSubIdentityResultMsg.class);
     	}
         
         return oldExchange;
