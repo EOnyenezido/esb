@@ -32,6 +32,11 @@
                      address="http://localhost:9001/mpfs/"
                      serviceClass="com.huawei.bme.cbsinterface.bcservices.CBSInterfaceBusinessMgr"
                      wsdlURL="classpath:wsdl/ESB_BusinessMgr_MPFS_V_1_0_1.wsdl"/>
+    
+    <cxf:cxfEndpoint id="mpfaEndpoint"
+                     address="http://localhost:9002/mpfa/"
+                     serviceClass="com.esb.crm.crmservice.biz.CRMInterfaceServicePortType"
+                     wsdlURL="classpath:wsdl/CRMInterfaceService.wsdl"/>
                      
     <cxf:cxfEndpoint id="downstreamCBS"
                      address="http://localhost:8088/mockCBS_Server/"
@@ -47,5 +52,10 @@
                      address="http://localhost:8090/mockMPFS_Server/"
                      serviceClass="com.huawei.bme.cbsinterface.bcservices.CBSInterfaceBusinessMgr"
                      wsdlURL="classpath:wsdl/ESB_BusinessMgr_MPFS_V_1_0_1.wsdl"/>
+                     
+    <cxf:cxfEndpoint id="downstreamCRM"
+                     address="http://localhost:8091/mockCRM_Server/"
+                     serviceClass="ws.its.tabs.webservices.tabs_tibco_callback.tabs_tibco_callback_wsdl.TABSTIBCOCALLBACK"
+                     wsdlURL="classpath:wsdl/TABS_TIBCO_CALLBACK.wsdl"/>
 
 </beans>

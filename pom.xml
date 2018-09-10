@@ -125,9 +125,23 @@
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wsdlOptions>
                 <wsdlOption>
+                  <wsdl>${basedir}/src/main/resources/wsdl/CRMInterfaceService.wsdl</wsdl>
+                  <wsdl>${basedir}/src/main/resources/wsdl/ESB_BC_Services.wsdl</wsdl>
+                  <wsdl>${basedir}/src/main/resources/wsdl/ESB_BusinessMgr_MPFS_V_1_0_1.wsdl</wsdl>
+                  <wsdl>${basedir}/src/main/resources/wsdl/ESB_TOPENG_V_1_0.wsdl</wsdl>
                   <wsdl>${basedir}/src/main/resources/wsdl/ESBaccountmgrService_v_1_0.wsdl</wsdl>
+                  <wsdl>${basedir}/src/main/resources/wsdl/ESBbusinessmgrService_v_1_0.wsdl</wsdl>
+                  <wsdl>${basedir}/src/main/resources/wsdl/TABS_TIBCO_CALLBACK.wsdl</wsdl>
+                  <wsdl>${basedir}/src/main/resources/wsdl/TOPENG.wsdl</wsdl>
                   <bindingFiles>
-                    <bindingFile>${basedir}/src/main/resources/binding/binding.xml</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/binding/binding_accmgr.xml</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/binding/binding_bc.xml</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/binding/binding_bssmgr.xml</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/binding/binding_callback.xml</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/binding/binding_crm.xml</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/binding/binding_esb_topeng.xml</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/binding/binding_mpfs.xml</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/binding/binding_topeng.xml</bindingFile>
                   </bindingFiles>
                 </wsdlOption>
               </wsdlOptions>
