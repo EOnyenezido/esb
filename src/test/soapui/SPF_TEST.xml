@@ -1,0 +1,3497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="867f7f75-5e92-443c-a0b2-33bb9b29ac44" activeEnvironment="Default" name="SPF_US/DS" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="72d3be18-e98c-4af8-8499-4278d700a3e9" wsaVersion="NONE" name="CBSInterfaceAccountMgrServicePortTypeEndpointBinding" type="wsdl" bindingName="{http://www.huawei.com/bme/cbsinterface/cbs/accountmgr}CBSInterfaceAccountMgrServicePortTypeEndpointBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/o00440392/eclipse-workspace/demo_SPF_MPFS_MPFA_using_camel_cxf_amq/src/main/resources/wsdl/ESBaccountmgrService_v_1_0.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.cxf.CXFAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Output Directory" value="C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\target\generated\src\main\java"/>
+  <con:entry key="Server" value="false"/>
+  <con:entry key="EXSH" value="false"/>
+  <con:entry key="DNS" value="true"/>
+  <con:entry key="Class Folder" value=""/>
+  <con:entry key="WSDL" value="file:/C:/Users/o00440392/eclipse-workspace/demo_SPF_MPFS_MPFA_using_camel_cxf_amq/src/main/resources/wsdl/ESBaccountmgrService_v_1_0.wsdl"/>
+  <con:entry key="Output Packages" value="&lt;xml-fragment/>"/>
+  <con:entry key="Compile" value="false"/>
+  <con:entry key="Bindings" value=""/>
+  <con:entry key="Implementation" value="false"/>
+  <con:entry key="Catalog" value=""/>
+  <con:entry key="Use cached WSDL" value="true"/>
+  <con:entry key="Exclude namespaces" value="&lt;xml-fragment/>"/>
+  <con:entry key="DEX" value="true"/>
+  <con:entry key="All Code" value="false"/>
+  <con:entry key="build.xml" value="false"/>
+  <con:entry key="Validate WSDL" value="false"/>
+  <con:entry key="Java Args" value=""/>
+  <con:entry key="Package" value=""/>
+  <con:entry key="Client" value="false"/>
+  <con:entry key="Tool Args" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:definitionCache type="TEXT" rootPart="file:/C:/Users/o00440392/eclipse-workspace/demo_SPF_MPFS_MPFA_using_camel_cxf_amq/src/main/resources/wsdl/ESBaccountmgrService_v_1_0.wsdl"><con:part><con:url>file:/C:/Users/o00440392/eclipse-workspace/demo_SPF_MPFS_MPFA_using_camel_cxf_amq/src/main/resources/wsdl/ESBaccountmgrService_v_1_0.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr" xmlns:ns="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:tns="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:ns0="http://www.huawei.com/bme/cbsinterface/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.huawei.com/bme/cbsinterface/common" schemaLocation="../schema/ESBaccountmgr_Common_v_1_0.xsd"/>
+      <xs:import namespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr" schemaLocation="../schema/ESBaccountmgr_v_1_0.xsd"/>
+      <xs:import namespace="http://www.huawei.com/bme/cbsinterface/common"/>
+      <xs:import namespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr"/>
+      <xs:element name="ActiveFirstRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="ActiveFirstRequest" form="unqualified" type="tns:ActiveFirstRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActiveFirstResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AdjustAccountRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="AdjustAccountRequest" form="unqualified" type="tns:AdjustAccountRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AdjustAccountResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="AdjustAccountResult" form="unqualified" type="tns:AdjustAccountResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BalanceToValidityRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="BalanceToValidityRequest" form="unqualified" type="tns:BalanceToValidityRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BalanceToValidityResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="BalanceToValidityResult" form="unqualified" type="tns:BalanceToValidityResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CumulateEnquiryRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="CumulateEnquiryRequest" form="unqualified" type="tns:CumulateEnquiryRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CumulateEnquiryResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="CumulateEnquiryResult" form="unqualified" type="tns:CumulateEnquiryResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExchangeAccountRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="ExchangeAccountRequest" form="unqualified" type="tns:ExchangeAccountRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExchangeAccountResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="ExchangeAccountResult" form="unqualified" type="tns:ExchangeAccountResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ModSubBillCycleTypeRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="ModSubBillCycleTypeRequest" form="unqualified" type="tns:ModSubBillCycleTypeRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ModSubBillCycleTypeResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ModifyVoucherStateRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="ModifyVoucherStateRequest" form="unqualified" type="tns:ModifyVoucherStateRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ModifyVoucherStateResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OneOffDeductionRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="OneOffDeductionRequest" form="unqualified" type="tns:OneOffDeductionRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OneOffDeductionResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="OneOffDeductionResult" form="unqualified" type="tns:OneOffDeductionResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaymentEnquiryRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="PaymentEnquiryRequest" form="unqualified" type="tns:PaymentEnquiryRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaymentEnquiryResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="PaymentEnquiryResult" form="unqualified" type="tns:PaymentEnquiryResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaymentRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="PaymentRequest" form="unqualified" type="tns:PaymentRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaymentResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="PaymentResult" form="unqualified" type="tns:PaymentResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryAdjustmentLogRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="QueryAdjustmentLogRequest" form="unqualified" type="tns:QueryAdjustmentLogRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryAdjustmentLogResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="QueryAdjustmentLogResult" form="unqualified" type="tns:QueryAdjustmentLogResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryBalanceRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="QueryBalanceRequest" form="unqualified" type="tns:QueryBalanceRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryBalanceResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="QueryBalanceResult" form="unqualified" type="tns:QueryBalanceResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryTransferLogRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="QueryTransferLogRequest" form="unqualified" type="tns:QueryTransferLogRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryTransferLogResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="QueryTransferLogResult" form="unqualified" type="tns:QueryTransferLogResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReversePaymentRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="ReversePaymentRequest" form="unqualified" type="tns:ReversePaymentRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReversePaymentResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="ReversePaymentResult" form="unqualified" type="tns:ReversePaymentResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ServiceHandleFeeRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="ServiceHandleFeeRequest" form="unqualified" type="tns:ServiceHandleFeeRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ServiceHandleFeeResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="ServiceHandleFeeResult" form="unqualified" type="tns:ServiceHandleFeeResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransInPpsPosRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="TransInPpsPosRequest" form="unqualified" type="tns:TransInPpsPosRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransInPpsPosResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="TransInPpsPosResult" form="unqualified" type="tns:TransInPpsPosResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransferAccountRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="TransferAccountRequest" form="unqualified" type="tns:TransferAccountRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransferAccountResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="TransferAccountResult" form="unqualified" type="tns:TransferAccountResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoucherEnquiryByPINRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="VoucherEnquiryByPINRequest" form="unqualified" type="tns:VoucherEnquiryByPINRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoucherEnquiryByPINResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="VoucherEnquiryByPINResult" form="unqualified" type="tns:VoucherEnquiryByPINResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoucherEnquiryBySeqRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="VoucherEnquiryBySeqRequest" form="unqualified" type="tns:VoucherEnquiryBySeqRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoucherEnquiryBySeqResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="VoucherEnquiryBySeqResult" form="unqualified" type="tns:VoucherEnquiryBySeqResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoucherRechargeEnquiryRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="VoucherRechargeEnquiryRequest" form="unqualified" type="tns:VoucherRechargeEnquiryRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoucherRechargeEnquiryResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="VoucherRechargeEnquiryResult" form="unqualified" type="tns:VoucherRechargeEnquiryResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoucherRechargeRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequestHeader" form="unqualified" type="ns0:RequestHeader"/>
+            <xs:element name="VoucherRechargeRequest" form="unqualified" type="tns:VoucherRechargeRequest"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="VoucherRechargeResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ResultHeader" form="unqualified" type="ns0:ResultHeader"/>
+            <xs:element name="VoucherRechargeResult" form="unqualified" type="tns:VoucherRechargeResult" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:service name="ESBaccountmgrService_v_1_0">
+    <wsdl:port name="CBSInterfaceAccountMgrServicePortTypeEndpoint" binding="tns:CBSInterfaceAccountMgrServicePortTypeEndpointBinding">
+      <soap:address location="https://10.130.46.6:8585/TABS_AccountMgr_Services"/>
+    </wsdl:port>
+    <wsdl:port name="CBSInterfaceAccountMgrServicePortTypeEndpoint_JMS" binding="tns:CBSInterfaceAccountMgrServicePortTypeEndpoint_JMSBinding">
+      <soap:address location="jms"/>
+      <jms:connectionFactory>QueueConnectionFactory</jms:connectionFactory>
+      <jms:targetAddress destination="queue">EMTS.NG.DEV.RQ.Q.SPF.OCS1_2.AcctMgrServiceQueue.V1_0</jms:targetAddress>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="CBSInterfaceAccountMgrServicePortType">
+    <wsdl:operation name="VoucherRecharge">
+      <wsdl:input message="tns:VoucherRechargeRequestMessage"/>
+      <wsdl:output message="tns:VoucherRechargeResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveFirst">
+      <wsdl:input message="tns:ActiveFirstRequestMessage"/>
+      <wsdl:output message="tns:ActiveFirstResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePayment">
+      <wsdl:input message="tns:ReversePaymentRequestMessage"/>
+      <wsdl:output message="tns:ReversePaymentResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVoucherState">
+      <wsdl:input message="tns:ModifyVoucherStateRequestMessage"/>
+      <wsdl:output message="tns:ModifyVoucherStateResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentEnquiry">
+      <wsdl:input message="tns:PaymentEnquiryRequestMessage"/>
+      <wsdl:output message="tns:PaymentEnquiryResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeAccount">
+      <wsdl:input message="tns:ExchangeAccountRequestMessage"/>
+      <wsdl:output message="tns:ExchangeAccountResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBalance">
+      <wsdl:input message="tns:QueryBalanceRequestMessage"/>
+      <wsdl:output message="tns:QueryBalanceResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="TransferAccount">
+      <wsdl:input message="tns:TransferAccountRequestMessage"/>
+      <wsdl:output message="tns:TransferAccountResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="TransInPpsPos">
+      <wsdl:input message="tns:TransInPpsPosRequestMessage"/>
+      <wsdl:output message="tns:TransInPpsPosResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransferLog">
+      <wsdl:input message="tns:QueryTransferLogRequestMessage"/>
+      <wsdl:output message="tns:QueryTransferLogResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherEnquiryBySeq">
+      <wsdl:input message="tns:VoucherEnquiryBySeqRequestMessage"/>
+      <wsdl:output message="tns:VoucherEnquiryBySeqResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustAccount">
+      <wsdl:input message="tns:AdjustAccountRequestMessage"/>
+      <wsdl:output message="tns:AdjustAccountResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Payment">
+      <wsdl:input message="tns:PaymentRequestMessage"/>
+      <wsdl:output message="tns:PaymentResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ModSubBillCycleType">
+      <wsdl:input message="tns:ModSubBillCycleTypeRequestMessage"/>
+      <wsdl:output message="tns:ModSubBillCycleTypeResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="BalanceToValidity">
+      <wsdl:input message="tns:BalanceToValidityRequestMessage"/>
+      <wsdl:output message="tns:BalanceToValidityResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherEnquiryByPIN">
+      <wsdl:input message="tns:VoucherEnquiryByPINRequestMessage"/>
+      <wsdl:output message="tns:VoucherEnquiryByPINResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceHandleFee">
+      <wsdl:input message="tns:ServiceHandleFeeRequestMessage"/>
+      <wsdl:output message="tns:ServiceHandleFeeResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CumulateEnquiry">
+      <wsdl:input message="tns:CumulateEnquiryRequestMessage"/>
+      <wsdl:output message="tns:CumulateEnquiryResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="OneOffDeduction">
+      <wsdl:input message="tns:OneOffDeductionRequestMessage"/>
+      <wsdl:output message="tns:OneOffDeductionResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdjustmentLog">
+      <wsdl:input message="tns:QueryAdjustmentLogRequestMessage"/>
+      <wsdl:output message="tns:QueryAdjustmentLogResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherRechargeEnquiry">
+      <wsdl:input message="tns:VoucherRechargeEnquiryRequestMessage"/>
+      <wsdl:output message="tns:VoucherRechargeEnquiryResultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CBSInterfaceAccountMgrServicePortTypeEndpointBinding" type="tns:CBSInterfaceAccountMgrServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="VoucherRecharge">
+      <soap:operation style="document" soapAction="VoucherRecharge"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveFirst">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ActiveFirst"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePayment">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ReversePayment"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVoucherState">
+      <soap:operation style="document" soapAction="ModifyVoucherState"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentEnquiry">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/PaymentEnquiry"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeAccount">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ExchangeAccount"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBalance">
+      <soap:operation style="document" soapAction="QueryBalance"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferAccount">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/TransferAccount"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransInPpsPos">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/TransInPpsPos"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransferLog">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/QueryTransferLog"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherEnquiryBySeq">
+      <soap:operation style="document" soapAction="VoucherEnquiryBySeq"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustAccount">
+      <soap:operation style="document" soapAction="AdjustAccount"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payment">
+      <soap:operation style="document" soapAction="Payment"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModSubBillCycleType">
+      <soap:operation style="document" soapAction="ModSubBillCycleType"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BalanceToValidity">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/BalanceToValidity"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherEnquiryByPIN">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/VoucherEnquiryByPIN"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceHandleFee">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ServiceHandleFee"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CumulateEnquiry">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/CumulateEnquiry"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneOffDeduction">
+      <soap:operation style="document" soapAction="OneOffDeduction"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdjustmentLog">
+      <soap:operation style="document" soapAction="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/QueryAdjustmentLog"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherRechargeEnquiry">
+      <soap:operation style="document" soapAction="VoucherRechargeEnquiry"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CBSInterfaceAccountMgrServicePortTypeEndpoint_JMSBinding" type="tns:CBSInterfaceAccountMgrServicePortType">
+    <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+    <jms:binding messageFormat="bytes"/>
+    <wsdl:operation name="VoucherRecharge">
+      <soap:operation style="document" soapAction="VoucherRecharge"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveFirst">
+      <soap:operation style="document" soapAction="ActiveFirst"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePayment">
+      <soap:operation style="document" soapAction="ReversePayment"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVoucherState">
+      <soap:operation style="document" soapAction="ModifyVoucherState"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentEnquiry">
+      <soap:operation style="document" soapAction="PaymentEnquiry"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchangeAccount">
+      <soap:operation style="document" soapAction="ExchangeAccount"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBalance">
+      <soap:operation style="document" soapAction="QueryBalance"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferAccount">
+      <soap:operation style="document" soapAction="TransferAccount"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransInPpsPos">
+      <soap:operation style="document" soapAction="TransInPpsPos"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransferLog">
+      <soap:operation style="document" soapAction="QueryTransferLog"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherEnquiryBySeq">
+      <soap:operation style="document" soapAction="VoucherEnquiryBySeq"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustAccount">
+      <soap:operation style="document" soapAction="AdjustAccount"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payment">
+      <soap:operation style="document" soapAction="Payment"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModSubBillCycleType">
+      <soap:operation style="document" soapAction="ModSubBillCycleType"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BalanceToValidity">
+      <soap:operation style="document" soapAction="BalanceToValidity"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherEnquiryByPIN">
+      <soap:operation style="document" soapAction="VoucherEnquiryByPIN"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceHandleFee">
+      <soap:operation style="document" soapAction="ServiceHandleFee"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CumulateEnquiry">
+      <soap:operation style="document" soapAction="CumulateEnquiry"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneOffDeduction">
+      <soap:operation style="document" soapAction="OneOffDeduction"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAdjustmentLog">
+      <soap:operation style="document" soapAction="QueryAdjustmentLog"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoucherRechargeEnquiry">
+      <soap:operation style="document" soapAction="VoucherRechargeEnquiry"/>
+      <wsdl:input>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="part1"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:message name="VoucherRechargeRequestMessage">
+    <wsdl:part name="part1" element="ns:VoucherRechargeRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="VoucherRechargeResultMessage">
+    <wsdl:part name="part1" element="ns:VoucherRechargeResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ActiveFirstRequestMessage">
+    <wsdl:part name="part1" element="ns:ActiveFirstRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ActiveFirstResultMessage">
+    <wsdl:part name="part1" element="ns:ActiveFirstResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ReversePaymentRequestMessage">
+    <wsdl:part name="part1" element="ns:ReversePaymentRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ReversePaymentResultMessage">
+    <wsdl:part name="part1" element="ns:ReversePaymentResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ModifyVoucherStateRequestMessage">
+    <wsdl:part name="part1" element="ns:ModifyVoucherStateRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ModifyVoucherStateResultMessage">
+    <wsdl:part name="part1" element="ns:ModifyVoucherStateResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentEnquiryRequestMessage">
+    <wsdl:part name="part1" element="ns:PaymentEnquiryRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentEnquiryResultMessage">
+    <wsdl:part name="part1" element="ns:PaymentEnquiryResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ExchangeAccountRequestMessage">
+    <wsdl:part name="part1" element="ns:ExchangeAccountRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ExchangeAccountResultMessage">
+    <wsdl:part name="part1" element="ns:ExchangeAccountResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="QueryBalanceRequestMessage">
+    <wsdl:part name="part1" element="ns:QueryBalanceRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="QueryBalanceResultMessage">
+    <wsdl:part name="part1" element="ns:QueryBalanceResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="TransferAccountRequestMessage">
+    <wsdl:part name="part1" element="ns:TransferAccountRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="TransferAccountResultMessage">
+    <wsdl:part name="part1" element="ns:TransferAccountResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="TransInPpsPosRequestMessage">
+    <wsdl:part name="part1" element="ns:TransInPpsPosRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="TransInPpsPosResultMessage">
+    <wsdl:part name="part1" element="ns:TransInPpsPosResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="QueryTransferLogRequestMessage">
+    <wsdl:part name="part1" element="ns:QueryTransferLogRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="QueryTransferLogResultMessage">
+    <wsdl:part name="part1" element="ns:QueryTransferLogResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="VoucherEnquiryBySeqRequestMessage">
+    <wsdl:part name="part1" element="ns:VoucherEnquiryBySeqRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="VoucherEnquiryBySeqResultMessage">
+    <wsdl:part name="part1" element="ns:VoucherEnquiryBySeqResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="AdjustAccountRequestMessage">
+    <wsdl:part name="part1" element="ns:AdjustAccountRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="AdjustAccountResultMessage">
+    <wsdl:part name="part1" element="ns:AdjustAccountResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentRequestMessage">
+    <wsdl:part name="part1" element="ns:PaymentRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentResultMessage">
+    <wsdl:part name="part1" element="ns:PaymentResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ModSubBillCycleTypeRequestMessage">
+    <wsdl:part name="part1" element="ns:ModSubBillCycleTypeRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ModSubBillCycleTypeResultMessage">
+    <wsdl:part name="part1" element="ns:ModSubBillCycleTypeResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="BalanceToValidityRequestMessage">
+    <wsdl:part name="part1" element="ns:BalanceToValidityRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="BalanceToValidityResultMessage">
+    <wsdl:part name="part1" element="ns:BalanceToValidityResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="VoucherEnquiryByPINRequestMessage">
+    <wsdl:part name="part1" element="ns:VoucherEnquiryByPINRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="VoucherEnquiryByPINResultMessage">
+    <wsdl:part name="part1" element="ns:VoucherEnquiryByPINResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ServiceHandleFeeRequestMessage">
+    <wsdl:part name="part1" element="ns:ServiceHandleFeeRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ServiceHandleFeeResultMessage">
+    <wsdl:part name="part1" element="ns:ServiceHandleFeeResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="CumulateEnquiryRequestMessage">
+    <wsdl:part name="part1" element="ns:CumulateEnquiryRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="CumulateEnquiryResultMessage">
+    <wsdl:part name="part1" element="ns:CumulateEnquiryResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="OneOffDeductionRequestMessage">
+    <wsdl:part name="part1" element="ns:OneOffDeductionRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="OneOffDeductionResultMessage">
+    <wsdl:part name="part1" element="ns:OneOffDeductionResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="QueryAdjustmentLogRequestMessage">
+    <wsdl:part name="part1" element="ns:QueryAdjustmentLogRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="QueryAdjustmentLogResultMessage">
+    <wsdl:part name="part1" element="ns:QueryAdjustmentLogResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="VoucherRechargeEnquiryRequestMessage">
+    <wsdl:part name="part1" element="ns:VoucherRechargeEnquiryRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="VoucherRechargeEnquiryResultMessage">
+    <wsdl:part name="part1" element="ns:VoucherRechargeEnquiryResultMsg"/>
+  </wsdl:message>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\schema\ESBaccountmgr_Common_v_1_0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.huawei.com/bme/cbsinterface/common" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:common="http://www.huawei.com/bme/cbsinterface/common">
+  <xs:complexType name="RequestHeader">
+    <xs:sequence>
+      <xs:element name="CommandId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>(*Message command ID. OCS provide special value according special interface)*)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Version" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>(*Version ID,current version is 1(CRM is always 1)*)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TransactionId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>(*Transaction ID,used to compound session, default null (CRM is always null)*)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SequenceId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>(*Sequence ID,used to compound session,default 1(CRM is always 1)*)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestType">
+        <xs:annotation>
+          <xs:documentation>(*valid to compound session, default value is None, enumerate values as follows:
+            Event, not compound session type
+            Start, session begin
+            Continue,session continue
+            Stop, session stop.
+            (CRM  is always Event)*)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Event"/>
+            <xs:enumeration value="Start"/>
+            <xs:enumeration value="Continue"/>
+            <xs:enumeration value="Stop"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SessionEntity" type="common:SessionEntityType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>for security use
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InterFrom" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>the source of interface:
+            4050000 for BSS
+            4050001 for Bank
+            4050002 for SP
+            ......
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InterMode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The mode of interface
+            4050000 for Face to Face
+            4050001 for  Website
+            4050002 for  IVR
+            ......
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InterMedi" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Interaction Media
+            if Website then give URL
+            if IVR then give access number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="visitArea" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>visit area
+            Only IVR is useful
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="currentCell" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The current cell of calling
+            Only IVR is useful
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="additionInfo" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>addition information
+            it is optional
+            if bank then bankcode
+            if SP then Spcode</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ThirdPartyID" type="xs:int" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>reserve parameter 1
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Reserve2" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>reserve parameter 2
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Reserve3" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>reserve parameter 3
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PartnerID" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Partner id,this parameter is used for fill the information of the partner when the session is generated by carrier
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OperatorID" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>CRM system operator id
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TradePartnerID" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>partner id,this parameter is used for fill the information of partner when the session is generated by partner
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PartnerOperID" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>partner operaor id
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BelToAreaID" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>belong to area
+            it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SerialNo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>CRM system request serial number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Remark" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The remark information about this operation, it is optional</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="requestingSystem" type="common:requestingSystem" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultHeader">
+    <xs:sequence>
+      <xs:element name="CommandId" type="xs:string"/>
+      <xs:element name="Version" type="xs:string"/>
+      <xs:element name="TransactionId" type="xs:string"/>
+      <xs:element name="SequenceId" type="xs:string"/>
+      <xs:element name="ResultCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Indicates a code of success/failure, failure reasons.                              405000000: success                Other values: failure reasons</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ResultDesc" type="xs:string" minOccurs="0"/>
+      <xs:element name="ThirdPartyID" type="xs:int" minOccurs="0"/>
+      <xs:element name="requestingSystem" type="common:requestingSystem" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SessionEntityType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="Password" type="xs:string"/>
+      <xs:element name="RemoteAddress" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestingSystem">
+    <xs:sequence>
+      <xs:element name="correlationID" type="xs:string" minOccurs="0"/>
+      <xs:element name="requestingApplicationName" type="xs:string" minOccurs="0"/>
+      <xs:element name="requestingServer" type="xs:string" minOccurs="0"/>
+      <xs:element name="serviceContext" type="common:serviceContext" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serviceContext">
+    <xs:sequence>
+      <xs:element name="businessScenario" type="xs:string" minOccurs="0"/>
+      <xs:element name="serviceOperation" type="xs:string" minOccurs="0"/>
+      <xs:element name="serviceDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="versionNumber" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\schema\ESBaccountmgr_v_1_0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:account="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">
+  <xs:complexType name="AcctChgRecType">
+    <xs:all>
+      <xs:element name="CurrAcctBal" type="xs:long" nillable="true"/>
+      <xs:element name="ChgAcctBal" type="xs:long" nillable="true"/>
+      <xs:element name="CurrExpTime" type="xs:string"/>
+      <xs:element name="ChgExpTime" type="xs:int"/>
+      <xs:element name="AccountType" type="xs:string" nillable="true"/>
+      <xs:element name="AccountID" type="xs:string" nillable="true"/>
+      <xs:element name="MinMeasureId" type="xs:int" nillable="true" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ModifyAcctFeeType">
+    <xs:all>
+      <xs:element name="AccountType" type="xs:string"/>
+      <xs:element name="CurrAcctChgAmt" type="xs:long"/>
+      <xs:element name="GLID" type="xs:int" minOccurs="0"/>
+      <xs:element name="MinMeasureId" type="xs:int" minOccurs="0"/>
+      <xs:element name="ProductID" type="xs:string" minOccurs="0"/>
+      <xs:element name="ExpireTime" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="BalanceRecordType">
+    <xs:all>
+      <xs:element name="BalanceDesc" type="xs:string" minOccurs="0"/>
+      <xs:element name="Balance" type="xs:long"/>
+      <xs:element name="MinMeasureId" type="xs:int" nillable="true" minOccurs="0"/>
+      <xs:element name="UnitType" type="xs:int" nillable="true" minOccurs="0"/>
+      <xs:element name="AccountType" type="xs:string"/>
+      <xs:element name="ExpireTime" type="xs:string"/>
+      <xs:element name="AccountCredit" type="xs:long" nillable="true" minOccurs="0"/>
+      <xs:element name="AccountKey" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="ProductID" type="xs:string" nillable="true" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="QueryBalanceRequest">
+    <xs:all>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+      <xs:element name="ProductID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="QueryBalanceResult">
+    <xs:sequence>
+      <xs:element name="BalanceRecord" type="account:BalanceRecordType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VoucherRechargeRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="CardPinNumber" type="xs:string"/>
+      <xs:element name="RechargeType" type="xs:string" minOccurs="0"/>
+      <xs:element name="AccountType" type="xs:int" minOccurs="0"/>
+      <xs:element name="Location" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="VoucherRechargeResult">
+    <xs:sequence>
+      <xs:element name="FaceValue" type="xs:long" nillable="true" minOccurs="0"/>
+      <xs:element name="NewBalance" type="xs:long" nillable="true" minOccurs="0"/>
+      <xs:element name="NewActiveStop" type="xs:string" minOccurs="0"/>
+      <xs:element name="ValidityPeriod" type="xs:int" nillable="true" minOccurs="0"/>
+      <xs:element name="RechargeBonus" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="PrmAcctType" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="PrmAmt" type="xs:long" nillable="true" minOccurs="0"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="PaymentAmt" type="xs:long"/>
+      <xs:element name="PaymentMode" type="xs:string"/>
+      <xs:element name="AccountType" type="xs:string" minOccurs="0"/>
+      <xs:element name="AdditionalInfo" type="xs:string" minOccurs="0"/>
+      <xs:element name="BankCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="CardSerialNo" type="xs:string" minOccurs="0"/>
+      <xs:element name="CardBatchNo" type="xs:string" minOccurs="0"/>
+      <xs:element name="Location" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+      <xs:element name="AgentName" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="PaymentResult">
+    <xs:all>
+      <xs:element name="InternalSerialNo" type="xs:string" minOccurs="0"/>
+      <xs:element name="NewBalance" type="xs:long" nillable="true" minOccurs="0"/>
+      <xs:element name="NewActiveStop" type="xs:string" minOccurs="0"/>
+      <xs:element name="ValidityPeriod" type="xs:int" nillable="true" minOccurs="0"/>
+      <xs:element name="ExtraValidity" type="xs:int" nillable="true" minOccurs="0"/>
+      <xs:element name="AcctChgRecList" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AcctChgRec" type="account:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ActiveFirstRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="AccessMethod" type="xs:int" minOccurs="0"/>
+      <xs:element name="Location" type="xs:string" minOccurs="0"/>
+      <xs:element name="IVRLang" type="xs:int" minOccurs="0"/>
+      <xs:element name="SMSLang" type="xs:int" minOccurs="0"/>
+      <xs:element name="USSDLang" type="xs:int" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ReversePaymentRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="OldLogID" type="xs:string"/>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="PaymentMode" type="xs:int" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ReversePaymentResult">
+    <xs:all>
+      <xs:element name="NewBalance" type="xs:long"/>
+      <xs:element name="NewActiveStop" type="xs:string"/>
+      <xs:element name="AcctChgRecList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AcctChgRec" type="account:AcctChgRecType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InternalSerialNo" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="AdjustAccountRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="OldLogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="OperateType" type="xs:int"/>
+      <xs:element name="AdditionalInfo" type="xs:string" minOccurs="0"/>
+      <xs:element name="SPCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="ModifyAcctFeeList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ModifyAcctFee" type="account:ModifyAcctFeeType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="AdjustAccountResult">
+    <xs:sequence>
+      <xs:element name="AcctChgRec" type="account:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VoucherRechargeEnquiryRequest">
+    <xs:all>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="RechargeType" type="xs:string" minOccurs="0"/>
+      <xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+      <xs:element name="EndTime" type="xs:string" minOccurs="0"/>
+      <xs:element name="RechargeResult" type="xs:int" minOccurs="0"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="VoucherRechargeEnquiryResult">
+    <xs:sequence>
+      <xs:element name="RechargeLog" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="SubscriberNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="SubCosID" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="TradeTime" type="xs:string" minOccurs="0"/>
+            <xs:element name="ErrorType" type="xs:string" minOccurs="0"/>
+            <xs:element name="RechargeType" type="xs:string" minOccurs="0"/>
+            <xs:element name="Batch" type="xs:string" minOccurs="0"/>
+            <xs:element name="Sequence" type="xs:string" minOccurs="0"/>
+            <xs:element name="CardCosID" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="OldActiveStop" type="xs:string" minOccurs="0"/>
+            <xs:element name="NewActiveStop" type="xs:string" minOccurs="0"/>
+            <xs:element name="OldSuspendStop" type="xs:string" minOccurs="0"/>
+            <xs:element name="NewSuspendStop" type="xs:string" minOccurs="0"/>
+            <xs:element name="OldDisableStop" type="xs:string" minOccurs="0"/>
+            <xs:element name="NewDisableStop" type="xs:string" minOccurs="0"/>
+            <xs:element name="OldBalance" type="xs:long" nillable="true" minOccurs="0"/>
+            <xs:element name="NewBalance" type="xs:long" nillable="true" minOccurs="0"/>
+            <xs:element name="RechargeAmt" type="xs:long" nillable="true" minOccurs="0"/>
+            <xs:element name="Currency" type="xs:string" minOccurs="0"/>
+            <xs:element name="Validity" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="PrmValidity" type="xs:int" minOccurs="0"/>
+            <xs:element name="RechargeBonus" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="PrmAcctType" type="xs:int" nillable="true" minOccurs="0"/>
+                  <xs:element name="PrmAmt" type="xs:int" nillable="true" minOccurs="0"/>
+                  <xs:element name="CurrPrmAcctBalance" type="xs:int" nillable="true" minOccurs="0"/>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="OperatorID" type="xs:string" minOccurs="0"/>
+            <xs:element name="RechargeTax" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="RechargePenalty" type="xs:int" nillable="true" minOccurs="0"/>
+            <xs:element name="CallingPartyNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="CardSPID" type="xs:string" minOccurs="0"/>
+            <xs:element name="OldPOSBalance" type="xs:long" nillable="true" minOccurs="0"/>
+            <xs:element name="NewPOSBalance" type="xs:long" nillable="true" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransferAccountRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="TransfereeNo" type="xs:string"/>
+      <xs:element name="TransferorNo" type="xs:string"/>
+      <xs:element name="TransferType" type="xs:int" minOccurs="0"/>
+      <xs:element name="TransferHandlingCharge" type="xs:long" minOccurs="0"/>
+      <xs:element name="ModifyAcctFeeList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ModifyAcctFee" type="account:ModifyAcctFeeType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HandlingChargeFlag" type="xs:int" minOccurs="0"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="TransferAccountResult">
+    <xs:all>
+      <xs:element name="TransfereeHandlingCharge" type="xs:long" minOccurs="0"/>
+      <xs:element name="TransferorHandlingCharge" type="xs:long" minOccurs="0"/>
+      <xs:element name="TransfereeAcctChgList" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AcctChgRec" type="account:AcctChgRecType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransferorAcctChgList" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AcctChgRec" type="account:AcctChgRecType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransfereeOldActiveStop" type="xs:string" minOccurs="0"/>
+      <xs:element name="TransfereeNewActiveStop" type="xs:string" minOccurs="0"/>
+      <xs:element name="TransferorOldActiveStop" type="xs:string" minOccurs="0"/>
+      <xs:element name="TransferorNewActiveStop" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="PaymentEnquiryRequest">
+    <xs:all>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="PaymentMode" type="xs:string" minOccurs="0"/>
+      <xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+      <xs:element name="EndTime" type="xs:string" minOccurs="0"/>
+      <xs:element name="PaymentResult" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="PaymentEnquiryResult">
+    <xs:sequence>
+      <xs:element name="PaymentLog" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LogID" type="xs:string"/>
+            <xs:element name="InternalSerialNo" type="xs:string"/>
+            <xs:element name="SubscriberNo" type="xs:string"/>
+            <xs:element name="SubCosID" type="xs:int"/>
+            <xs:element name="TradeTime" type="xs:string"/>
+            <xs:element name="ErrorType" type="xs:string"/>
+            <xs:element name="PaymentMode" type="xs:string"/>
+            <xs:element name="OldActiveStop" type="xs:string"/>
+            <xs:element name="NewActiveStop" type="xs:string"/>
+            <xs:element name="OldSuspendStop" type="xs:string"/>
+            <xs:element name="NewSuspendStop" type="xs:string"/>
+            <xs:element name="OldDisableStop" type="xs:string"/>
+            <xs:element name="NewDisableStop" type="xs:string"/>
+            <xs:element name="OldBalance" type="xs:long"/>
+            <xs:element name="NewBalance" type="xs:long"/>
+            <xs:element name="PaymentAmt" type="xs:long"/>
+            <xs:element name="Currency" type="xs:string" minOccurs="0"/>
+            <xs:element name="Validity" type="xs:int"/>
+            <xs:element name="PrmValidity" type="xs:int"/>
+            <xs:element name="PaymentBonus" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PrmAcctType" type="xs:int"/>
+                  <xs:element name="PrmAmt" type="xs:int"/>
+                  <xs:element name="CurrPrmAcctBalance" type="xs:int" minOccurs="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="CanceledFlag" type="xs:int"/>
+            <xs:element name="CancelLogID" type="xs:string" minOccurs="0"/>
+            <xs:element name="AdditiontalInfo" type="xs:string"/>
+            <xs:element name="OperatorID" type="xs:string" minOccurs="0"/>
+            <xs:element name="PaymentTax" type="xs:int" minOccurs="0"/>
+            <xs:element name="PaymentPenalty" type="xs:int" minOccurs="0"/>
+            <xs:element name="OperationDes" type="xs:string" minOccurs="0"/>
+            <xs:element name="BankCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="OldPOSBalance" type="xs:long" minOccurs="0"/>
+            <xs:element name="NewPOSBalance" type="xs:long" minOccurs="0"/>
+            <xs:element name="Location" type="xs:string" minOccurs="0"/>
+            <xs:element name="AgentName" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CumulateEnquiryRequest">
+    <xs:all>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="EnquiryType" type="xs:int"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="CumulateEnquiryResult">
+    <xs:sequence>
+      <xs:element name="CumulativeItem" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="CumulateID" type="xs:int"/>
+            <xs:element name="CumulateBeginTime" type="xs:string"/>
+            <xs:element name="CumulateEndTime" type="xs:string"/>
+            <xs:element name="CumulativeAmt" type="xs:int"/>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VoucherEnquiryBySeqRequest">
+    <xs:all>
+      <xs:element name="Sequence" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="VoucherEnquiryBySeqResult">
+    <xs:all>
+      <xs:element name="Sequence" type="xs:string"/>
+      <xs:element name="BatchNo" type="xs:string"/>
+      <xs:element name="FaceValue" type="xs:long"/>
+      <xs:element name="Currency" type="xs:string"/>
+      <xs:element name="CardCosID" type="xs:int"/>
+      <xs:element name="CardStartDate" type="xs:string"/>
+      <xs:element name="CardStopDate" type="xs:string"/>
+      <xs:element name="HotCardFlag" type="xs:int"/>
+      <xs:element name="OprDateTime" type="xs:string"/>
+      <xs:element name="OprType" type="xs:string"/>
+      <xs:element name="ChargeNumber" type="xs:string"/>
+      <xs:element name="TradeTime" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="VoucherEnquiryByPINRequest">
+    <xs:all>
+      <xs:element name="CardPinNumber" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="VoucherEnquiryByPINResult">
+    <xs:all>
+      <xs:element name="Sequence" type="xs:string"/>
+      <xs:element name="BatchNo" type="xs:string"/>
+      <xs:element name="FaceValue" type="xs:int"/>
+      <xs:element name="Currency" type="xs:string"/>
+      <xs:element name="CardCosID" type="xs:string"/>
+      <xs:element name="CardStartDate" type="xs:string"/>
+      <xs:element name="CardStopDate" type="xs:string"/>
+      <xs:element name="HotCardFlag" type="xs:int"/>
+      <xs:element name="OprDateTime" type="xs:string"/>
+      <xs:element name="OprType" type="xs:string"/>
+      <xs:element name="ChargeNumber" type="xs:string"/>
+      <xs:element name="TradeTime" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="OneOffDeductionRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="OperationID" type="xs:int" minOccurs="0"/>
+      <xs:element name="DeductAmt" type="xs:long"/>
+      <xs:element name="MinMeasureId" type="xs:int" minOccurs="0"/>
+      <xs:element name="AdditionalInfo" type="xs:string" minOccurs="0"/>
+      <xs:element name="OperationType" type="xs:int" minOccurs="0"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="OneOffDeductionResult">
+    <xs:sequence>
+      <xs:element name="AcctChgRec" type="account:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceHandleFeeRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="RequestAction" type="xs:int"/>
+      <xs:element name="OperationID" type="xs:int"/>
+      <xs:element name="OperationType" type="xs:int"/>
+      <xs:element name="OperationFeeAmt" type="xs:int" minOccurs="0"/>
+      <xs:element name="ParamList" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Param" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="name" type="xs:string"/>
+                  <xs:element name="value" type="xs:string"/>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OperationCount" type="xs:int" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ServiceHandleFeeResult">
+    <xs:sequence>
+      <xs:element name="DeductionAmt" type="xs:int"/>
+      <xs:element name="ResidualFreeTimes" type="xs:int"/>
+      <xs:element name="AcctChgRec" type="account:AcctChgRecType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QueryTransferLogRequest">
+    <xs:sequence>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+      <xs:element name="EndTime" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QueryTransferLogResult">
+    <xs:sequence>
+      <xs:element name="TransferLog" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LogID" type="xs:string"/>
+            <xs:element name="InternalSerialNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="PeerPartyNo" type="xs:string"/>
+            <xs:element name="TradeTime" type="xs:string"/>
+            <xs:element name="OperatorID" type="xs:string" minOccurs="0"/>
+            <xs:element name="HandlingCharge" type="xs:long" minOccurs="0"/>
+            <xs:element name="OldActiveStop" type="xs:string"/>
+            <xs:element name="NewActiveStop" type="xs:string"/>
+            <xs:element name="OldSuspendStop" type="xs:string"/>
+            <xs:element name="NewSuspendStop" type="xs:string"/>
+            <xs:element name="OldDisableStop" type="xs:string"/>
+            <xs:element name="NewDisableStop" type="xs:string"/>
+            <xs:element name="OperationDes" type="xs:string" minOccurs="0"/>
+            <xs:element name="TransferAcctItem" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="AccountType" type="xs:string"/>
+                  <xs:element name="TransferAmt" type="xs:long"/>
+                  <xs:element name="CurrBalance" type="xs:long"/>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QueryAdjustmentLogRequest">
+    <xs:sequence>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="StartTime" type="xs:string" minOccurs="0"/>
+      <xs:element name="EndTime" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QueryAdjustmentLogResult">
+    <xs:sequence>
+      <xs:element name="AdjustmentLog" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LogID" type="xs:string"/>
+            <xs:element name="InternalSerialNo" type="xs:string" minOccurs="0"/>
+            <xs:element name="TradeTime" type="xs:string"/>
+            <xs:element name="OperatorID" type="xs:string" minOccurs="0"/>
+            <xs:element name="OldActiveStop" type="xs:string"/>
+            <xs:element name="NewActiveStop" type="xs:string"/>
+            <xs:element name="OldSuspendStop" type="xs:string"/>
+            <xs:element name="NewSuspendStop" type="xs:string"/>
+            <xs:element name="OldDisableStop" type="xs:string"/>
+            <xs:element name="NewDisableStop" type="xs:string"/>
+            <xs:element name="OperationDes" type="xs:string" minOccurs="0"/>
+            <xs:element name="AdjustmentItem" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="AccountType" type="xs:string"/>
+                  <xs:element name="AdjustmentAmt" type="xs:long"/>
+                  <xs:element name="CurrBalance" type="xs:long"/>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModifyVoucherStateRequest">
+    <xs:sequence>
+      <xs:element name="Sequence" type="xs:string"/>
+      <xs:element name="CardFlag" type="xs:int" minOccurs="0"/>
+      <xs:element name="Reason" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BalanceToValidityRequest">
+    <xs:all>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="DeductionAmt" type="xs:long"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="BalanceToValidityResult">
+    <xs:all>
+      <xs:element name="AcctChgRec" type="account:AcctChgRecType"/>
+      <xs:element name="NewActiveStop" type="xs:string"/>
+      <xs:element name="NewSuspendStop" type="xs:string"/>
+      <xs:element name="NewDisableStop" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="TransInPpsPosRequest">
+    <xs:all>
+      <xs:element name="LogID" type="xs:string" minOccurs="0"/>
+      <xs:element name="TransfereeNo" type="xs:string"/>
+      <xs:element name="TransferorNo" type="xs:string"/>
+      <xs:element name="TransferFlag" type="xs:int"/>
+      <xs:element name="TransferAmt" type="xs:long"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="TransInPpsPosResult">
+    <xs:all>
+      <xs:element name="TransfereeAcctChgList" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AcctChgRec" type="account:AcctChgRecType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransferorAcctChgList" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AcctChgRec" type="account:AcctChgRecType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ExchangeAccountRequest">
+    <xs:sequence>
+      <xs:element name="LogId" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="OriAccountType" type="xs:int"/>
+      <xs:element name="OriAccountKey" type="xs:long" minOccurs="0"/>
+      <xs:element name="DesAccountType" type="xs:int"/>
+      <xs:element name="DesAccountKey" type="xs:long" minOccurs="0"/>
+      <xs:element name="Ammount" type="xs:int"/>
+      <xs:element name="HandlingChargeFlag" type="xs:int" minOccurs="0"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExchangeAccountResult">
+    <xs:all>
+      <xs:element name="ExchangeHandlingCharge" type="xs:long" minOccurs="0"/>
+      <xs:element name="OriAcctChgRec" type="account:AcctChgRecType"/>
+      <xs:element name="DesAcctChgRec" type="account:AcctChgRecType"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="ModSubBillCycleTypeRequest">
+    <xs:sequence>
+      <xs:element name="SubscriberNo" type="xs:string"/>
+      <xs:element name="NewBillCycleType" type="xs:int"/>
+      <xs:element name="CustID" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://O00440392:8088/mockCBS_Server</con:endpoint><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint></con:endpoints><con:operation id="8bbf98f5-c091-44a5-b602-2fdf8ac47aa9" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ActiveFirst" name="ActiveFirst" bindingOperationName="ActiveFirst" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fa9ffbbe-5870-456a-9b65-44debd5a3a68" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://18.218.49.58:8080/demo_SPF_MPFS_MPFA_using_camel_cxf_amq-0.0.1-SNAPSHOT/services/spf</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:ActiveFirstRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <ActiveFirstRequest>\r
+            <!--You may enter the following 7 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <!--Optional:-->\r
+            <acc1:AccessMethod>?</acc1:AccessMethod>\r
+            <!--Optional:-->\r
+            <acc1:Location>?</acc1:Location>\r
+            <!--Optional:-->\r
+            <acc1:IVRLang>?</acc1:IVRLang>\r
+            <!--Optional:-->\r
+            <acc1:SMSLang>?</acc1:SMSLang>\r
+            <!--Optional:-->\r
+            <acc1:USSDLang>?</acc1:USSDLang>\r
+         </ActiveFirstRequest>\r
+      </acc:ActiveFirstRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ActiveFirst"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8c8ccf83-beab-45fb-8212-9701ccd029f5" isOneWay="false" action="AdjustAccount" name="AdjustAccount" bindingOperationName="AdjustAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="827d9c2f-a8c7-40f1-b3f4-8444aa9b4950" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:AdjustAccountRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <AdjustAccountRequest>\r
+            <!--You may enter the following 8 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <!--Optional:-->\r
+            <acc1:OldLogID>?</acc1:OldLogID>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <acc1:OperateType>?</acc1:OperateType>\r
+            <!--Optional:-->\r
+            <acc1:AdditionalInfo>?</acc1:AdditionalInfo>\r
+            <!--Optional:-->\r
+            <acc1:SPCode>?</acc1:SPCode>\r
+            <acc1:ModifyAcctFeeList>\r
+               <!--1 or more repetitions:-->\r
+               <acc1:ModifyAcctFee>\r
+                  <!--You may enter the following 6 items in any order-->\r
+                  <acc1:AccountType>?</acc1:AccountType>\r
+                  <acc1:CurrAcctChgAmt>?</acc1:CurrAcctChgAmt>\r
+                  <!--Optional:-->\r
+                  <acc1:GLID>?</acc1:GLID>\r
+                  <!--Optional:-->\r
+                  <acc1:MinMeasureId>?</acc1:MinMeasureId>\r
+                  <!--Optional:-->\r
+                  <acc1:ProductID>?</acc1:ProductID>\r
+                  <!--Optional:-->\r
+                  <acc1:ExpireTime>?</acc1:ExpireTime>\r
+               </acc1:ModifyAcctFee>\r
+            </acc1:ModifyAcctFeeList>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </AdjustAccountRequest>\r
+      </acc:AdjustAccountRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="AdjustAccount"/></con:call></con:operation><con:operation id="6fe715f4-1f1f-4411-9886-b24d781b53a6" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/BalanceToValidity" name="BalanceToValidity" bindingOperationName="BalanceToValidity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a6869ea8-b79b-4ea7-923d-838673b31dc2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:BalanceToValidityRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <BalanceToValidityRequest>\r
+            <!--You may enter the following 2 items in any order-->\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <acc1:DeductionAmt>?</acc1:DeductionAmt>\r
+         </BalanceToValidityRequest>\r
+      </acc:BalanceToValidityRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/BalanceToValidity"/></con:call></con:operation><con:operation id="9c9e654f-c2bc-457c-a6b7-1ca8312ad45b" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/CumulateEnquiry" name="CumulateEnquiry" bindingOperationName="CumulateEnquiry" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0d81be62-4506-4969-80cf-c1f57b36a902" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:CumulateEnquiryRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <CumulateEnquiryRequest>\r
+            <!--You may enter the following 3 items in any order-->\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <acc1:EnquiryType>?</acc1:EnquiryType>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </CumulateEnquiryRequest>\r
+      </acc:CumulateEnquiryRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/CumulateEnquiry"/></con:call></con:operation><con:operation id="dbff54cb-43f4-4b11-a1c8-2485bfed44c7" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ExchangeAccount" name="ExchangeAccount" bindingOperationName="ExchangeAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5b2e3932-536d-4c09-b339-97c2687e29ad" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:ExchangeAccountRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <ExchangeAccountRequest>\r
+            <!--Optional:-->\r
+            <acc1:LogId>?</acc1:LogId>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <acc1:OriAccountType>?</acc1:OriAccountType>\r
+            <!--Optional:-->\r
+            <acc1:OriAccountKey>?</acc1:OriAccountKey>\r
+            <acc1:DesAccountType>?</acc1:DesAccountType>\r
+            <!--Optional:-->\r
+            <acc1:DesAccountKey>?</acc1:DesAccountKey>\r
+            <acc1:Ammount>?</acc1:Ammount>\r
+            <!--Optional:-->\r
+            <acc1:HandlingChargeFlag>?</acc1:HandlingChargeFlag>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </ExchangeAccountRequest>\r
+      </acc:ExchangeAccountRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ExchangeAccount"/></con:call></con:operation><con:operation id="42b336f2-13ab-4496-9110-b0a2c9b754f1" isOneWay="false" action="ModifyVoucherState" name="ModifyVoucherState" bindingOperationName="ModifyVoucherState" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1f22bfe7-28ca-4d0b-a64c-25d937dfa6d4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:ModifyVoucherStateRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <ModifyVoucherStateRequest>\r
+            <acc1:Sequence>?</acc1:Sequence>\r
+            <!--Optional:-->\r
+            <acc1:CardFlag>?</acc1:CardFlag>\r
+            <!--Optional:-->\r
+            <acc1:Reason>?</acc1:Reason>\r
+         </ModifyVoucherStateRequest>\r
+      </acc:ModifyVoucherStateRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ModifyVoucherState"/></con:call></con:operation><con:operation id="47ce8810-2414-47b9-90c7-ed30d5564446" isOneWay="false" action="ModSubBillCycleType" name="ModSubBillCycleType" bindingOperationName="ModSubBillCycleType" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="819eabf5-cc72-400a-b13e-6c6d9697d103" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:ModSubBillCycleTypeRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <ModSubBillCycleTypeRequest>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <acc1:NewBillCycleType>?</acc1:NewBillCycleType>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </ModSubBillCycleTypeRequest>\r
+      </acc:ModSubBillCycleTypeRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ModSubBillCycleType"/></con:call></con:operation><con:operation id="f0dff94f-91d8-429e-be13-4006d4305812" isOneWay="false" action="OneOffDeduction" name="OneOffDeduction" bindingOperationName="OneOffDeduction" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="912dd59d-8775-415b-a892-cd0bddd776cb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:OneOffDeductionRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <OneOffDeductionRequest>\r
+            <!--You may enter the following 8 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <!--Optional:-->\r
+            <acc1:OperationID>?</acc1:OperationID>\r
+            <acc1:DeductAmt>?</acc1:DeductAmt>\r
+            <!--Optional:-->\r
+            <acc1:MinMeasureId>?</acc1:MinMeasureId>\r
+            <!--Optional:-->\r
+            <acc1:AdditionalInfo>?</acc1:AdditionalInfo>\r
+            <!--Optional:-->\r
+            <acc1:OperationType>?</acc1:OperationType>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </OneOffDeductionRequest>\r
+      </acc:OneOffDeductionRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="OneOffDeduction"/></con:call></con:operation><con:operation id="1983637d-a1f2-4d51-96a3-ac94506bf5f3" isOneWay="false" action="Payment" name="Payment" bindingOperationName="Payment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="efef4f28-2155-4664-b536-dbe7e79734ae" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:PaymentRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <PaymentRequest>\r
+            <!--You may enter the following 12 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <acc1:PaymentAmt>?</acc1:PaymentAmt>\r
+            <acc1:PaymentMode>?</acc1:PaymentMode>\r
+            <!--Optional:-->\r
+            <acc1:AccountType>?</acc1:AccountType>\r
+            <!--Optional:-->\r
+            <acc1:AdditionalInfo>?</acc1:AdditionalInfo>\r
+            <!--Optional:-->\r
+            <acc1:BankCode>?</acc1:BankCode>\r
+            <!--Optional:-->\r
+            <acc1:CardSerialNo>?</acc1:CardSerialNo>\r
+            <!--Optional:-->\r
+            <acc1:CardBatchNo>?</acc1:CardBatchNo>\r
+            <!--Optional:-->\r
+            <acc1:Location>?</acc1:Location>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+            <!--Optional:-->\r
+            <acc1:AgentName>?</acc1:AgentName>\r
+         </PaymentRequest>\r
+      </acc:PaymentRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="Payment"/></con:call></con:operation><con:operation id="0a81e4b7-2904-46c4-8e42-4e440061ca5f" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/PaymentEnquiry" name="PaymentEnquiry" bindingOperationName="PaymentEnquiry" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="af58d2f2-0e16-49c0-9bc7-b43e05d3db05" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:PaymentEnquiryRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <PaymentEnquiryRequest>\r
+            <!--You may enter the following 6 items in any order-->\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <!--Optional:-->\r
+            <acc1:PaymentMode>?</acc1:PaymentMode>\r
+            <!--Optional:-->\r
+            <acc1:StartTime>?</acc1:StartTime>\r
+            <!--Optional:-->\r
+            <acc1:EndTime>?</acc1:EndTime>\r
+            <!--Optional:-->\r
+            <acc1:PaymentResult>?</acc1:PaymentResult>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </PaymentEnquiryRequest>\r
+      </acc:PaymentEnquiryRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/PaymentEnquiry"/></con:call></con:operation><con:operation id="83b91d61-b46c-4848-b68e-926fd2d0026d" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/QueryAdjustmentLog" name="QueryAdjustmentLog" bindingOperationName="QueryAdjustmentLog" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f3407934-6265-4da6-919b-8ddc80b4ed8c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:QueryAdjustmentLogRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <QueryAdjustmentLogRequest>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <!--Optional:-->\r
+            <acc1:StartTime>?</acc1:StartTime>\r
+            <!--Optional:-->\r
+            <acc1:EndTime>?</acc1:EndTime>\r
+         </QueryAdjustmentLogRequest>\r
+      </acc:QueryAdjustmentLogRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/QueryAdjustmentLog"/></con:call></con:operation><con:operation id="cbc3be01-9af5-4666-80d1-5e1151f8a55a" isOneWay="false" action="QueryBalance" name="QueryBalance" bindingOperationName="QueryBalance" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b27edb12-5368-4064-b8a9-59a8edd9f7b9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://18.218.49.58:8080/demo_SPF_MPFS_MPFA_using_camel_cxf_amq-0.0.1-SNAPSHOT/services/spf</con:endpoint><con:request><![CDATA[	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+	   <soapenv:Header/>\r
+	   <soapenv:Body>\r
+	      <acc:QueryBalanceRequestMsg>\r
+	         <RequestHeader>\r
+	            <com:CommandId>?</com:CommandId>\r
+	            <com:Version>?</com:Version>\r
+	            <com:TransactionId>?</com:TransactionId>\r
+	            <com:SequenceId>?</com:SequenceId>\r
+	            <com:RequestType>?</com:RequestType>\r
+	            <!--Optional:-->\r
+	            <com:SessionEntity>\r
+	               <com:Name>?</com:Name>\r
+	               <com:Password>?</com:Password>\r
+	               <com:RemoteAddress>?</com:RemoteAddress>\r
+	            </com:SessionEntity>\r
+	            <!--Optional:-->\r
+	            <com:InterFrom>?</com:InterFrom>\r
+	            <!--Optional:-->\r
+	            <com:InterMode>?</com:InterMode>\r
+	            <!--Optional:-->\r
+	            <com:InterMedi>?</com:InterMedi>\r
+	            <!--Optional:-->\r
+	            <com:visitArea>?</com:visitArea>\r
+	            <!--Optional:-->\r
+	            <com:currentCell>?</com:currentCell>\r
+	            <!--Optional:-->\r
+	            <com:additionInfo>?</com:additionInfo>\r
+	            <!--Optional:-->\r
+	            <com:ThirdPartyID>100</com:ThirdPartyID>\r
+	            <!--Optional:-->\r
+	            <com:Reserve2>?</com:Reserve2>\r
+	            <!--Optional:-->\r
+	            <com:Reserve3>?</com:Reserve3>\r
+	            <!--Optional:-->\r
+	            <com:PartnerID>?</com:PartnerID>\r
+	            <!--Optional:-->\r
+	            <com:OperatorID>?</com:OperatorID>\r
+	            <!--Optional:-->\r
+	            <com:TradePartnerID>?</com:TradePartnerID>\r
+	            <!--Optional:-->\r
+	            <com:PartnerOperID>?</com:PartnerOperID>\r
+	            <!--Optional:-->\r
+	            <com:BelToAreaID>?</com:BelToAreaID>\r
+	            <com:SerialNo>?</com:SerialNo>\r
+	            <!--Optional:-->\r
+	            <com:Remark>?</com:Remark>\r
+	            <!--Optional:-->\r
+	            <com:requestingSystem>\r
+	               <!--Optional:-->\r
+	               <com:correlationID>?</com:correlationID>\r
+	               <!--Optional:-->\r
+	               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+	               <!--Optional:-->\r
+	               <com:requestingServer>?</com:requestingServer>\r
+	               <!--Optional:-->\r
+	               <com:serviceContext>\r
+	                  <!--Optional:-->\r
+	                  <com:businessScenario>?</com:businessScenario>\r
+	                  <!--Optional:-->\r
+	                  <com:serviceOperation>?</com:serviceOperation>\r
+	                  <!--Optional:-->\r
+	                  <com:serviceDescription>?</com:serviceDescription>\r
+	                  <!--Optional:-->\r
+	                  <com:versionNumber>?</com:versionNumber>\r
+	               </com:serviceContext>\r
+	            </com:requestingSystem>\r
+	         </RequestHeader>\r
+	         <QueryBalanceRequest>\r
+	            <!--You may enter the following 3 items in any order-->\r
+	            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+	            <!--Optional:-->\r
+	            <acc1:CustID>?</acc1:CustID>\r
+	            <!--Optional:-->\r
+	            <acc1:ProductID>?</acc1:ProductID>\r
+	         </QueryBalanceRequest>\r
+	      </acc:QueryBalanceRequestMsg>\r
+	   </soapenv:Body>\r
+	</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="QueryBalance"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ddb20ef4-ebd5-43c5-9ad8-d3c8e30fe056" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/QueryTransferLog" name="QueryTransferLog" bindingOperationName="QueryTransferLog" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="12a569a7-201a-4cb9-9271-c4bd00b8e32e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:QueryTransferLogRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <QueryTransferLogRequest>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <!--Optional:-->\r
+            <acc1:StartTime>?</acc1:StartTime>\r
+            <!--Optional:-->\r
+            <acc1:EndTime>?</acc1:EndTime>\r
+         </QueryTransferLogRequest>\r
+      </acc:QueryTransferLogRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/QueryTransferLog"/></con:call></con:operation><con:operation id="88e2df70-f6dc-4c65-8dd4-3b77a97e0b49" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ReversePayment" name="ReversePayment" bindingOperationName="ReversePayment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="508d7efa-a776-48c9-b218-8347e498d446" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:ReversePaymentRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <ReversePaymentRequest>\r
+            <!--You may enter the following 4 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <acc1:OldLogID>?</acc1:OldLogID>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <!--Optional:-->\r
+            <acc1:PaymentMode>?</acc1:PaymentMode>\r
+         </ReversePaymentRequest>\r
+      </acc:ReversePaymentRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ReversePayment"/></con:call></con:operation><con:operation id="b44e7017-e8d6-4cc2-85b2-d008cda9b1ee" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ServiceHandleFee" name="ServiceHandleFee" bindingOperationName="ServiceHandleFee" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="51847f00-f517-4c62-bc40-4d2848e9c8ad" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:ServiceHandleFeeRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <ServiceHandleFeeRequest>\r
+            <!--You may enter the following 8 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <acc1:RequestAction>?</acc1:RequestAction>\r
+            <acc1:OperationID>?</acc1:OperationID>\r
+            <acc1:OperationType>?</acc1:OperationType>\r
+            <!--Optional:-->\r
+            <acc1:OperationFeeAmt>?</acc1:OperationFeeAmt>\r
+            <!--Optional:-->\r
+            <acc1:ParamList>\r
+               <!--1 or more repetitions:-->\r
+               <acc1:Param>\r
+                  <!--You may enter the following 2 items in any order-->\r
+                  <acc1:name>?</acc1:name>\r
+                  <acc1:value>?</acc1:value>\r
+               </acc1:Param>\r
+            </acc1:ParamList>\r
+            <!--Optional:-->\r
+            <acc1:OperationCount>?</acc1:OperationCount>\r
+         </ServiceHandleFeeRequest>\r
+      </acc:ServiceHandleFeeRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/ServiceHandleFee"/></con:call></con:operation><con:operation id="01218c97-ea76-45c7-b51b-fcd1caa7db7e" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/TransferAccount" name="TransferAccount" bindingOperationName="TransferAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6a573fa4-9b74-453c-88b3-4c00ce1c543d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:TransferAccountRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <TransferAccountRequest>\r
+            <!--You may enter the following 8 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <acc1:TransfereeNo>?</acc1:TransfereeNo>\r
+            <acc1:TransferorNo>?</acc1:TransferorNo>\r
+            <!--Optional:-->\r
+            <acc1:TransferType>?</acc1:TransferType>\r
+            <!--Optional:-->\r
+            <acc1:TransferHandlingCharge>?</acc1:TransferHandlingCharge>\r
+            <acc1:ModifyAcctFeeList>\r
+               <!--1 or more repetitions:-->\r
+               <acc1:ModifyAcctFee>\r
+                  <!--You may enter the following 6 items in any order-->\r
+                  <acc1:AccountType>?</acc1:AccountType>\r
+                  <acc1:CurrAcctChgAmt>?</acc1:CurrAcctChgAmt>\r
+                  <!--Optional:-->\r
+                  <acc1:GLID>?</acc1:GLID>\r
+                  <!--Optional:-->\r
+                  <acc1:MinMeasureId>?</acc1:MinMeasureId>\r
+                  <!--Optional:-->\r
+                  <acc1:ProductID>?</acc1:ProductID>\r
+                  <!--Optional:-->\r
+                  <acc1:ExpireTime>?</acc1:ExpireTime>\r
+               </acc1:ModifyAcctFee>\r
+            </acc1:ModifyAcctFeeList>\r
+            <!--Optional:-->\r
+            <acc1:HandlingChargeFlag>?</acc1:HandlingChargeFlag>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </TransferAccountRequest>\r
+      </acc:TransferAccountRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/TransferAccount"/></con:call></con:operation><con:operation id="4194903e-740a-4d94-a0f5-81ad3298712d" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/TransInPpsPos" name="TransInPpsPos" bindingOperationName="TransInPpsPos" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="091c8cb8-ff33-4bca-a3eb-d6db24976d21" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:TransInPpsPosRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <TransInPpsPosRequest>\r
+            <!--You may enter the following 6 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <acc1:TransfereeNo>?</acc1:TransfereeNo>\r
+            <acc1:TransferorNo>?</acc1:TransferorNo>\r
+            <acc1:TransferFlag>?</acc1:TransferFlag>\r
+            <acc1:TransferAmt>?</acc1:TransferAmt>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </TransInPpsPosRequest>\r
+      </acc:TransInPpsPosRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/TransInPpsPos"/></con:call></con:operation><con:operation id="9eaaf126-9952-4027-b581-db57f24c468c" isOneWay="false" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/VoucherEnquiryByPIN" name="VoucherEnquiryByPIN" bindingOperationName="VoucherEnquiryByPIN" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a0bd558a-4050-4e93-95b8-73c564bec4fd" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:VoucherEnquiryByPINRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <VoucherEnquiryByPINRequest>\r
+            <acc1:CardPinNumber>?</acc1:CardPinNumber>\r
+         </VoucherEnquiryByPINRequest>\r
+      </acc:VoucherEnquiryByPINRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="/BusinessServices/SPF/Provider/TABS/TABS_AccountMgr/Service/ESBaccountmgrService_v_1_0.serviceagent/CBSInterfaceAccountMgrServicePortTypeEndpoint1/VoucherEnquiryByPIN"/></con:call></con:operation><con:operation id="0cba35ab-5fe6-46d7-be5d-94160c96ceb8" isOneWay="false" action="VoucherEnquiryBySeq" name="VoucherEnquiryBySeq" bindingOperationName="VoucherEnquiryBySeq" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b688b8ce-3d2f-4578-9d32-236282191d03" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:VoucherEnquiryBySeqRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <VoucherEnquiryBySeqRequest>\r
+            <acc1:Sequence>?</acc1:Sequence>\r
+         </VoucherEnquiryBySeqRequest>\r
+      </acc:VoucherEnquiryBySeqRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="VoucherEnquiryBySeq"/></con:call></con:operation><con:operation id="bc9b8266-a573-45f0-8b36-3b2dd7d43e01" isOneWay="false" action="VoucherRecharge" name="VoucherRecharge" bindingOperationName="VoucherRecharge" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f6e970f2-d8c3-4704-84c6-ef32d2b845f0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:VoucherRechargeRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <VoucherRechargeRequest>\r
+            <!--You may enter the following 7 items in any order-->\r
+            <!--Optional:-->\r
+            <acc1:LogID>?</acc1:LogID>\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <acc1:CardPinNumber>?</acc1:CardPinNumber>\r
+            <!--Optional:-->\r
+            <acc1:RechargeType>?</acc1:RechargeType>\r
+            <!--Optional:-->\r
+            <acc1:AccountType>?</acc1:AccountType>\r
+            <!--Optional:-->\r
+            <acc1:Location>?</acc1:Location>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </VoucherRechargeRequest>\r
+      </acc:VoucherRechargeRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="VoucherRecharge"/></con:call></con:operation><con:operation id="7089fc6f-b74d-427d-9698-83e37c527807" isOneWay="false" action="VoucherRechargeEnquiry" name="VoucherRechargeEnquiry" bindingOperationName="VoucherRechargeEnquiry" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="78205eea-e739-456f-b71c-0ae136fa5313" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://10.130.46.6:8585/TABS_AccountMgr_Services</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.huawei.com/bme/cbsinterface/cbs/accountmgrmsg" xmlns:com="http://www.huawei.com/bme/cbsinterface/common" xmlns:acc1="http://www.huawei.com/bme/cbsinterface/cbs/accountmgr">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <acc:VoucherRechargeEnquiryRequestMsg>\r
+         <RequestHeader>\r
+            <com:CommandId>?</com:CommandId>\r
+            <com:Version>?</com:Version>\r
+            <com:TransactionId>?</com:TransactionId>\r
+            <com:SequenceId>?</com:SequenceId>\r
+            <com:RequestType>?</com:RequestType>\r
+            <!--Optional:-->\r
+            <com:SessionEntity>\r
+               <com:Name>?</com:Name>\r
+               <com:Password>?</com:Password>\r
+               <com:RemoteAddress>?</com:RemoteAddress>\r
+            </com:SessionEntity>\r
+            <!--Optional:-->\r
+            <com:InterFrom>?</com:InterFrom>\r
+            <!--Optional:-->\r
+            <com:InterMode>?</com:InterMode>\r
+            <!--Optional:-->\r
+            <com:InterMedi>?</com:InterMedi>\r
+            <!--Optional:-->\r
+            <com:visitArea>?</com:visitArea>\r
+            <!--Optional:-->\r
+            <com:currentCell>?</com:currentCell>\r
+            <!--Optional:-->\r
+            <com:additionInfo>?</com:additionInfo>\r
+            <!--Optional:-->\r
+            <com:ThirdPartyID>?</com:ThirdPartyID>\r
+            <!--Optional:-->\r
+            <com:Reserve2>?</com:Reserve2>\r
+            <!--Optional:-->\r
+            <com:Reserve3>?</com:Reserve3>\r
+            <!--Optional:-->\r
+            <com:PartnerID>?</com:PartnerID>\r
+            <!--Optional:-->\r
+            <com:OperatorID>?</com:OperatorID>\r
+            <!--Optional:-->\r
+            <com:TradePartnerID>?</com:TradePartnerID>\r
+            <!--Optional:-->\r
+            <com:PartnerOperID>?</com:PartnerOperID>\r
+            <!--Optional:-->\r
+            <com:BelToAreaID>?</com:BelToAreaID>\r
+            <com:SerialNo>?</com:SerialNo>\r
+            <!--Optional:-->\r
+            <com:Remark>?</com:Remark>\r
+            <!--Optional:-->\r
+            <com:requestingSystem>\r
+               <!--Optional:-->\r
+               <com:correlationID>?</com:correlationID>\r
+               <!--Optional:-->\r
+               <com:requestingApplicationName>?</com:requestingApplicationName>\r
+               <!--Optional:-->\r
+               <com:requestingServer>?</com:requestingServer>\r
+               <!--Optional:-->\r
+               <com:serviceContext>\r
+                  <!--Optional:-->\r
+                  <com:businessScenario>?</com:businessScenario>\r
+                  <!--Optional:-->\r
+                  <com:serviceOperation>?</com:serviceOperation>\r
+                  <!--Optional:-->\r
+                  <com:serviceDescription>?</com:serviceDescription>\r
+                  <!--Optional:-->\r
+                  <com:versionNumber>?</com:versionNumber>\r
+               </com:serviceContext>\r
+            </com:requestingSystem>\r
+         </RequestHeader>\r
+         <VoucherRechargeEnquiryRequest>\r
+            <!--You may enter the following 6 items in any order-->\r
+            <acc1:SubscriberNo>?</acc1:SubscriberNo>\r
+            <!--Optional:-->\r
+            <acc1:RechargeType>?</acc1:RechargeType>\r
+            <!--Optional:-->\r
+            <acc1:StartTime>?</acc1:StartTime>\r
+            <!--Optional:-->\r
+            <acc1:EndTime>?</acc1:EndTime>\r
+            <!--Optional:-->\r
+            <acc1:RechargeResult>?</acc1:RechargeResult>\r
+            <!--Optional:-->\r
+            <acc1:CustID>?</acc1:CustID>\r
+         </VoucherRechargeEnquiryRequest>\r
+      </acc:VoucherRechargeEnquiryRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="VoucherRechargeEnquiry"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

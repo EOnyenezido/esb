@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="fb53e023-60cb-47de-889c-e5c08972280a" activeEnvironment="Default" name="MPFS_US" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b8902c0a-d09e-4887-b600-dbe787e4a314" wsaVersion="NONE" name="CBSInterfaceBusinessMgrEndpointBinding" type="wsdl" bindingName="{http://www.huawei.com/bme/cbsinterface/bcservices}CBSInterfaceBusinessMgrEndpointBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/o00440392/eclipse-workspace/demo_SPF_MPFS_MPFA_using_camel_cxf_amq/src/main/resources/wsdl/mpfs/ESB_BusinessMgr_MPFS_V_1_0_1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\wsdl\mpfs\ESB_BusinessMgr_MPFS_V_1_0_1.wsdl"><con:part><con:url>file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\wsdl\mpfs\ESB_BusinessMgr_MPFS_V_1_0_1.wsdl</con:url><con:content><![CDATA[<!--Created by TIBCO WSDL-->
+<wsdl:definitions name="Untitled" targetNamespace="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:tns="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap1="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:jndi="http://www.tibco.com/namespaces/ws/2004/soap/apis/jndi">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:ns0="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:topeng="http://www.accenture.com/schemas/TOPENG/ESB_MPFSTOPENG_V_1_0">
+      <xs:import namespace="http://www.huawei.com/bme/cbsinterface/cbscommon" schemaLocation="CBSInterface_MessageHeader.xsd"/>
+      <xs:import namespace="http://www.huawei.com/bme/cbsinterface/bccommon" schemaLocation="CBSInterface_BC_Common.xsd"/>
+      <xs:import namespace="http://www.accenture.com/schemas/TOPENG/ESB_MPFSTOPENG_V_1_0" schemaLocation="ESB_MPFSTOPENG_V_1_0.xsd"/>
+      <xs:import namespace="http://www.huawei.com/bme/cbsinterface/cbscommon" schemaLocation="CBSInterface_BC_ChangeSubStatus.xsd"/>
+      <xs:import namespace="http://www.huawei.com/bme/cbsinterface/cbscommon" schemaLocation="CBSInterface_BC_ChangeSubIdentity.xsd"/>
+      <xs:element name="ChangeSubStatusRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="RequestHeader" type="ns0:RequestHeader"/>
+            <xs:element name="RequestBody">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element form="unqualified" name="ChangeSubStatusRequest" type="ns0:ChangeSubStatusRequest"/>
+                  <xs:element name="TopEngCommand" type="topeng:MMLCommandDet">
+                    <xs:annotation>
+                      <xs:documentation>MML Command to be send to TopEngine. The value will be send directly to TOPENGINE for Reconnecting</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangeSubStatusResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="ResultHeader" type="ns0:ResultHeader"/>
+            <xs:element form="unqualified" minOccurs="0" name="ChangeSubStatusResult" type="ns0:ChangeSubStatusResult"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangeSubIdentityRequestMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="RequestHeader" type="ns0:RequestHeader"/>
+            <xs:element name="RequestBody">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element form="unqualified" name="ChangeSubIdentityRequest" type="ns0:ChangeSubIdentityRequest"/>
+                  <xs:element name="TopEngCommand" type="topeng:MMLCommandDet">
+                    <xs:annotation>
+                      <xs:documentation>MML Command to be send to TopEngine. The value will be send directly to TOPENGINE for Reconnecting</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangeSubIdentityResultMsg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="unqualified" name="ResultHeader" type="ns0:ResultHeader"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ChangeSubStatusRequestMessage">
+    <wsdl:part element="tns:ChangeSubStatusRequestMsg" name="ChangeSubStatusRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ChangeSubStatusResultMessage">
+    <wsdl:part element="tns:ChangeSubStatusResultMsg" name="ChangeSubStatusResultMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ChangeSubIdentityRequestMessage">
+    <wsdl:part element="tns:ChangeSubIdentityRequestMsg" name="ChangeSubIdentityRequestMsg"/>
+  </wsdl:message>
+  <wsdl:message name="ChangeSubIdentityResultMessage">
+    <wsdl:part element="tns:ChangeSubIdentityResultMsg" name="ChangeSubIdentityResultMsg"/>
+  </wsdl:message>
+  <wsdl:portType name="CBSInterfaceBusinessMgr">
+    <wsdl:operation name="ChangeSubStatus">
+      <wsdl:input message="tns:ChangeSubStatusRequestMessage"/>
+      <wsdl:output message="tns:ChangeSubStatusResultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSubIdentity">
+      <wsdl:input message="tns:ChangeSubIdentityRequestMessage"/>
+      <wsdl:output message="tns:ChangeSubIdentityResultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CBSInterfaceBusinessMgrEndpointBinding" type="tns:CBSInterfaceBusinessMgr">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ChangeSubStatus">
+      <soap:operation soapAction="ChangeSubStatus" style="document"/>
+      <wsdl:input>
+        <soap:body parts="ChangeSubStatusRequestMsg" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="ChangeSubStatusResultMsg" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSubIdentity">
+      <soap:operation soapAction="ChangeSubIdentity" style="document"/>
+      <wsdl:input>
+        <soap:body parts="ChangeSubIdentityRequestMsg" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="ChangeSubIdentityResultMsg" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ESB_BusinessMgr_MPFS_V_1_0">
+    <!--CBSInterfaceBusinessMgrEndpoint is the Port type that has been created for the HTTP Connectivity Purpose, HTTP is the connection type that is to be used when Upstream System connects with API-X Service. The URL present will be replaced with the API-X URL which will be provided at the time of deployment-->
+    <wsdl:port binding="tns:CBSInterfaceBusinessMgrEndpointBinding" name="CBSInterfaceBusinessMgrEndpoint">
+      <soap:address location="https://10.130.46.6:8585/ESBMPFS/ESBMPFSPortTypeEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+  <!--CBSInterfaceBusinessMgrEndpointBinding is the Port type that has been created for the HTTP Connectivity Purpose, HTTP is the connection type that is to be used when Upstream System connects with API-X Service. The URL present will be replaced with the API-X URL which will be provided at the time of deployment-->
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\wsdl\mpfs\CBSInterface_MessageHeader.xsd</con:url><con:content><![CDATA[<!--编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any)-->
+<xs:schema targetNamespace="http://www.huawei.com/bme/cbsinterface/cbscommon" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:cbscommon="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>common structure of header</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="SecurityInfo">
+    <xs:sequence>
+      <xs:element name="LoginSystemCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>It is request system code which is defined in CBS.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Password" type="xs:string"/>
+      <xs:element name="RemoteIP" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperatorInfo">
+    <xs:sequence>
+      <xs:element name="OperatorID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The operator ID which is defined in both CBS system and request system.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ChannelID" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is channel ID which the operator belongs to</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OwnershipInfo">
+    <xs:sequence>
+      <xs:element name="BEID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The Business Entity ID which the customer belongs to</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BRID" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The Business Region ID which the customer belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>message header</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="RequestHeader">
+    <xs:sequence>
+      <xs:element name="Version" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Version ID of CBS interface</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BusinessCode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Business operation code from request system (For example: function code in CRM system).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MessageSeq" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique sequence number for one message. If request system resend a message, this field should be unchanged.
+For example: CRM can use "OrderID + OrderNodeID" as this field.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OwnershipInfo" type="cbscommon:OwnershipInfo" minOccurs="0"/>
+      <xs:element name="AccessSecurity" type="cbscommon:SecurityInfo">
+        <xs:annotation>
+          <xs:documentation>It is for security authentication for request system.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OperatorInfo" type="cbscommon:OperatorInfo" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It indicates the operator information of the request.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AccessMode" type="xs:string" minOccurs="0"/>
+      <xs:element name="MsgLanguageCode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is used to specify the language of description in returen message.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TimeFormat" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TimeType" type="xs:string"/>
+            <xs:element name="TimeZoneID" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestingSystem" type="cbscommon:requestingSystem" minOccurs="0"/>
+      <xs:element ref="cbscommon:ThirdPartyID" minOccurs="0"/>
+      <!--Mao-20170322 <xs:element name="OrderID" type="xs:string" minOccurs="0"/>-->
+      <xs:element name="OrderID" type="xs:string"/>
+      <xs:element name="AdditionalProperty" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Reserved for future extention</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Code" type="xs:string">
+              <xs:annotation>
+                <xs:documentation/>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultHeader">
+    <xs:sequence>
+      <xs:element name="Version" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Version ID of CBS interface</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ResultCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>0: success                              Other values: failure code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MsgLanguageCode" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is used to specify the language of description in returen message.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ResultDesc" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The brief description of result code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="requestingSystem" type="cbscommon:requestingSystem" minOccurs="0"/>
+      <xs:element ref="cbscommon:ThirdPartyID" minOccurs="0"/>
+      <xs:element name="AdditionalProperty" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Reserved for future extention</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Code" type="xs:string">
+              <xs:annotation>
+                <xs:documentation/>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestingSystem">
+    <xs:sequence>
+      <xs:element name="correlationID" type="xs:string" minOccurs="0"/>
+      <xs:element name="requestingApplicationName" type="xs:string" minOccurs="0"/>
+      <xs:element name="requestingServer" type="xs:string" minOccurs="0"/>
+      <xs:element name="serviceContext" type="cbscommon:serviceContext" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serviceContext">
+    <xs:sequence>
+      <xs:element name="businessScenario" type="xs:string" minOccurs="0"/>
+      <xs:element name="serviceOperation" type="xs:string" minOccurs="0"/>
+      <xs:element name="serviceDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="versionNumber" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThirdPartyID" type="xs:int"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\wsdl\mpfs\CBSInterface_BC_Common.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.huawei.com/bme/cbsinterface/bccommon" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:bccommon="http://www.huawei.com/bme/cbsinterface/bccommon" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:header="http://www.huawei.com/bme/cbsinterface/header">
+  <xs:simpleType name="DateTime">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="14"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SimpleProperty">
+    <xs:sequence>
+      <xs:element name="Code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="AddressKey" type="xs:string"/>
+      <xs:element name="Address1" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address2" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address3" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address4" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address5" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address6" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address7" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address8" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address9" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address10" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address11" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address12" type="xs:string" minOccurs="0"/>
+      <xs:element name="PostCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element name="Title" type="xs:string" minOccurs="0"/>
+      <xs:element name="FirstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="MiddleName" type="xs:string" minOccurs="0"/>
+      <xs:element name="LastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="AddressKey" type="xs:string" minOccurs="0"/>
+      <xs:element name="OfficePhone" type="xs:string" minOccurs="0"/>
+      <xs:element name="HomePhone" type="xs:string" minOccurs="0"/>
+      <xs:element name="MobilePhone" type="xs:string" minOccurs="0"/>
+      <xs:element name="Email" type="xs:string" minOccurs="0"/>
+      <xs:element name="Fax" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SalesInfo">
+    <xs:sequence>
+      <xs:element name="SalesChannelID" type="xs:string" minOccurs="0"/>
+      <xs:element name="SalesID" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EffectMode">
+    <xs:sequence>
+      <xs:element name="Mode" type="xs:string"/>
+      <xs:element name="Time" type="bccommon:DateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ActiveMode">
+    <xs:sequence>
+      <xs:element name="Mode" type="xs:string" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element name="ActiveTime" type="bccommon:DateTime"/>
+        <xs:element name="ActiveTimeLimit" type="bccommon:DateTime">
+          <xs:annotation>
+            <xs:documentation>It means the offering should be activated before this time.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Tax">
+    <xs:sequence>
+      <xs:element name="TaxCode" type="xs:string"/>
+      <xs:element name="TaxAmount" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BalanceChgInfo">
+    <xs:sequence>
+      <xs:element name="BalanceType" type="xs:string"/>
+      <xs:element name="BalanceID" type="xs:long" minOccurs="0"/>
+      <xs:element name="BalanceTypeName" type="xs:string" minOccurs="0"/>
+      <xs:element name="OldBalanceAmt" type="xs:long"/>
+      <xs:element name="NewBalanceAmt" type="xs:long"/>
+      <xs:element name="CurrencyID" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FreeUnitChgInfo">
+    <xs:sequence>
+      <xs:element name="FreeUnitInstanceID" type="xs:long" minOccurs="0"/>
+      <xs:element name="FreeUnitType" type="xs:string"/>
+      <xs:element name="FreeUnitTypeName" type="xs:string" minOccurs="0"/>
+      <xs:element name="MeasureUnit" type="xs:integer"/>
+      <xs:element name="MeasureUnitName" type="xs:string" minOccurs="0"/>
+      <xs:element name="OldAmt" type="xs:long"/>
+      <xs:element name="NewAmt" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>客户</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="CustAccessCode">
+    <xs:choice>
+      <xs:element name="PrimaryIdentity" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identify the Customer which the Primary Identity belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomerKey" type="xs:string"/>
+      <xs:element name="CustomerCode" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="CustInfo">
+    <xs:sequence>
+      <xs:element name="CustType" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustNodeType" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustClass" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="ParentCustKey" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>If this customer node has a parent node in the customer hierarchy, this field indicates the customer key of parent node.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustBasicInfo" type="bccommon:CustBasicInfo" minOccurs="0"/>
+      <xs:element name="NoticeSuppress" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ChannelType" type="xs:string"/>
+            <xs:element name="NoticeType" type="xs:string"/>
+            <xs:element name="SubNoticeType" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustBasicInfo">
+    <xs:sequence>
+      <xs:element name="CustSegment" type="xs:string" minOccurs="0"/>
+      <xs:element name="DFTPwd" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default password of this customer.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DFTWrittenLang" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default written language code of this customer.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DFTIVRLang" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default phonetic language code of this customer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DFTBillCycleType" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default billing cycle type of this customer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DFTCurrencyID" type="xs:integer" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default currency code of this customer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustLevel" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="CustLoyalty" type="xs:string" minOccurs="0"/>
+      <xs:element name="DunningFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndividualInfo">
+    <xs:sequence>
+      <xs:element name="IDType" type="xs:string" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is identification type of a person. 
+For example: ID Card Number, Social Security Nubmer......</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="IDValidity" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="Title" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="FirstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="MiddleName" type="xs:string" minOccurs="0"/>
+      <xs:element name="LastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="HomeAddressKey" type="xs:string" minOccurs="0"/>
+      <xs:element name="Gender" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="Nationality" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="Race" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="Birthday" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="NativePlace" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="MaritalStatus" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="Education" type="xs:string" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the education level code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Occupation" type="xs:string" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the occupation code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Salary" type="xs:string" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the salary level code.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OfficePhone" type="xs:string" minOccurs="0"/>
+      <xs:element name="HomePhone" type="xs:string" minOccurs="0"/>
+      <xs:element name="MobilePhone" type="xs:string" minOccurs="0"/>
+      <xs:element name="Fax" type="xs:string" minOccurs="0"/>
+      <xs:element name="Email" type="xs:string" minOccurs="0"/>
+      <xs:element name="IndividualProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrgInfo">
+    <xs:sequence>
+      <xs:element name="IDType" type="xs:string" nillable="true" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is identification type of a Org. For example: Business Register Number......</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IDNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="IDValidity" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="OrgType" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgName" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgShortName" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgLevel" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgAddressKey" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgSize" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the size code of a organization.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Industry" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the industry code the organization belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubIndustry" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the sub-industry code the organization belongs to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OrgPhoneNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgFaxNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgEmail" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgWebSite" type="xs:string" minOccurs="0"/>
+      <xs:element name="OrgProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>账户</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="AcctAccessCode">
+    <xs:choice>
+      <xs:element name="PrimaryIdentity" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identify the default Account which the Primary Identity Use.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AccountKey" type="xs:string"/>
+      <xs:element name="AccountCode" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="AccountInfo">
+    <xs:sequence>
+      <xs:element name="AcctCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="UserCustomerKey" type="xs:string" minOccurs="0"/>
+      <xs:element name="ParentAcctKey" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>There is a account hierarchy in the system. If a account node has a parent node in the account hierarchy, this field is the parent account key.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AcctBasicInfo" type="bccommon:AccountBasicInfo" minOccurs="0"/>
+      <xs:element name="BillCycleType" type="xs:string" minOccurs="0"/>
+      <xs:element name="AcctType" type="xs:string" minOccurs="0"/>
+      <xs:element name="PaymentType" type="xs:string" minOccurs="0"/>
+      <xs:element name="AcctClass" type="xs:string" minOccurs="0"/>
+      <xs:element name="CurrencyID" type="xs:integer" minOccurs="0"/>
+      <xs:element name="InitBalance" type="xs:long" minOccurs="0"/>
+      <xs:element name="CreditLimit" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LimitType" type="xs:string" minOccurs="0"/>
+            <xs:element name="LimitValue" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AcctPayMethod" type="xs:string" minOccurs="0"/>
+      <xs:element name="AutoPayChannel" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AutoPayChannelKey" type="xs:string"/>
+            <xs:element name="AutoPayChannelInfo">
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="bccommon:AutoPayChannelInfo"/>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaxException">
+    <xs:sequence>
+      <xs:element name="TaxChargeCode" type="xs:integer"/>
+      <xs:element name="ExceptionRate" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountBasicInfo">
+    <xs:sequence>
+      <xs:element name="AcctName" type="xs:string" minOccurs="0"/>
+      <xs:element name="BillLang" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is language code of bill.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DunningFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="LateFeeChargeable" type="xs:string" minOccurs="0"/>
+      <xs:element name="RedlistFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="ContactInfo" type="bccommon:Contact" minOccurs="0"/>
+      <xs:element name="FreeBillMedium" type="bccommon:FreeBillMedium" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="AcctProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AutoPaymentPlan">
+    <xs:sequence>
+      <xs:element name="AutoPayType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>B: billing cycle pay
+R: real time pay(Credit Control Trigger)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PaymentObjectType" type="xs:string"/>
+      <xs:element name="PaymentObjectID" type="xs:string"/>
+      <xs:element name="PaymentDate" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="Amount" type="xs:long" minOccurs="0"/>
+      <xs:element name="LimitTimes" type="xs:integer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AutoPayChannelInfo">
+    <xs:sequence>
+      <xs:element name="BankCode" type="xs:string"/>
+      <xs:element name="BankBranchCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="AcctType" type="xs:string"/>
+      <xs:element name="CreditCardType" type="xs:string" minOccurs="0"/>
+      <xs:element name="AcctNo" type="xs:string"/>
+      <xs:element name="AcctName" type="xs:string"/>
+      <xs:element name="CVVNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="ExpDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="Priority" type="xs:integer" minOccurs="0"/>
+      <xs:element name="ChargeCode" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="PaymentPlan" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AutoPayType" type="xs:string"/>
+            <xs:choice>
+              <xs:element name="BillCycleSchema" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AutoPayDate" type="xs:string" minOccurs="0"/>
+                    <xs:element name="AutoPayMaxAmt" type="xs:long" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TimeSchema">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PeriodType" type="xs:string"/>
+                    <xs:element name="AutoRechargeDate" type="xs:string" minOccurs="0"/>
+                    <xs:element name="AutoRechargeAmt" type="xs:long"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="LowBalanceSchema">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="BalanceThreshold" type="xs:long"/>
+                    <xs:element name="AutoRechargeAmt" type="xs:long"/>
+                    <xs:element name="ControlPeriodType" type="xs:string" minOccurs="0"/>
+                    <xs:element name="MaxTimes" type="xs:integer" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayOwner">
+    <xs:sequence>
+      <xs:element name="OwnerType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>S: payment to subscriber
+G: payment to subscriber group   A: payment to account</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OwnerKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FreeBillMedium">
+    <xs:sequence>
+      <xs:element name="BMCode" type="xs:string"/>
+      <xs:element name="BMType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentLimit">
+    <xs:sequence>
+      <xs:element name="LimitCycleType" type="xs:string"/>
+      <xs:element name="Limit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LimitType" type="xs:string"/>
+            <xs:element name="LimitValueType" type="xs:string"/>
+            <xs:element name="LimitMeasureUnit" type="xs:integer" minOccurs="0"/>
+            <xs:element name="LimitValue" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LimitRule" type="xs:string" minOccurs="0"/>
+      <xs:element name="CBonusFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="CurrencyID" type="xs:integer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayRelExtRule">
+    <xs:sequence>
+      <xs:element name="ChargeCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="OfferingKey" type="bccommon:OfferingKey" minOccurs="0"/>
+      <xs:element name="ControlRule" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>用户或用户群</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="SubAccessCode">
+    <xs:choice>
+      <xs:element name="PrimaryIdentity" type="xs:string"/>
+      <xs:element name="SubscriberKey" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="SubGroupAccessCode">
+    <xs:choice>
+      <xs:element name="SubGroupKey" type="xs:string"/>
+      <xs:element name="SubGroupCode" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="SubIdentity">
+    <xs:sequence>
+      <xs:element name="SubIdentityType" type="xs:string"/>
+      <xs:element name="SubIdentity" type="xs:string"/>
+      <xs:element name="PrimaryFlag" type="xs:string"/>
+      <xs:element name="RelatedSubIdentity" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Subscriber">
+    <xs:sequence>
+      <xs:element name="SubBasicInfo" type="bccommon:SubBasicInfo" minOccurs="0"/>
+      <xs:element name="UserCustomerKey" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is actual user customer key of subscriber if the actual user is not same as register customer.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubIdentity" type="bccommon:SubIdentity" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>It indicates all the subscriber Identities of subscriber. For example: MSISDN and IMSI are identities for GSM subscriber.
+For each subscriber, there is one and only one primary identity. For example: MSISDN is the primary identity of GSM subscriber.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Brand" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubClass" type="xs:string" minOccurs="0"/>
+      <xs:element name="NetworkType" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubPassword" type="xs:string" minOccurs="0"/>
+      <xs:element name="Status" type="xs:string" minOccurs="0"/>
+      <xs:element name="ActiveTimeLimit" type="bccommon:DateTime" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the time deadline for IDLE subscriber to active the subscriber.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ConsumptionLimit" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LimitType" type="xs:string"/>
+            <xs:element name="UnitType" type="xs:string"/>
+            <xs:choice>
+              <xs:sequence>
+                <xs:element name="MesureType" type="xs:integer"/>
+                <xs:element name="MesureID" type="xs:integer"/>
+                <xs:element name="LimitValue" type="xs:long"/>
+              </xs:sequence>
+              <xs:sequence>
+                <xs:element name="CurrencyID" type="xs:integer"/>
+                <xs:element name="LimitValue" type="xs:long"/>
+              </xs:sequence>
+            </xs:choice>
+            <xs:element name="LimitParam" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ParamCode" type="xs:string"/>
+                  <xs:element name="ParamValue" type="xs:long"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubBasicInfo">
+    <xs:sequence>
+      <xs:element name="WrittenLang" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the written language code of subscriber.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="IVRLang" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the phonetic language code of subscriber.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubLevel" type="xs:string" minOccurs="0"/>
+      <xs:element name="DunningFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubGroup">
+    <xs:sequence>
+      <xs:element name="SubGroupClass" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>For example:
+Formal Subscriber Group
+Test Subscriber Group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SubGroupCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="UserCustomerKey" type="xs:string" minOccurs="0"/>
+      <xs:element name="PGroupKey" type="xs:string" minOccurs="0"/>
+      <xs:element name="Password" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubGroupBasicInfo" type="bccommon:SubGroupBasicInfo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubGroupBasicInfo">
+    <xs:sequence>
+      <xs:element name="SubGroupName" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubGroupProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubGroupMember">
+    <xs:sequence>
+      <xs:element name="MemberShortNo" type="xs:string" minOccurs="0"/>
+      <xs:element name="SubGrpMemberInfo" type="bccommon:SubGroupMemberInfo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubGroupMemberInfo">
+    <xs:sequence>
+      <xs:element name="MemberTypeCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="MemberProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubRelationInfo">
+    <xs:sequence>
+      <xs:element name="SubscriberKey" type="xs:string"/>
+      <xs:element name="RelType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>For example:
+Presenter
+Master</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RscRelation">
+    <xs:sequence>
+      <xs:element name="RelationObjType" type="xs:string"/>
+      <xs:element name="RelationDestIdentify">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element name="SubIdentify" type="bccommon:SubAccessCode"/>
+            <xs:element name="SubGroupAccessCode" type="bccommon:SubGroupAccessCode"/>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="OfferingKey" type="bccommon:OfferingKey" minOccurs="0"/>
+      <xs:element name="ShareRule" type="xs:string" minOccurs="0"/>
+      <xs:element name="ShareLimit" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LimitCycleType" type="xs:string"/>
+            <xs:element name="LimitValue" type="xs:long"/>
+            <xs:element name="MeasureUnit" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StartTime" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="EndTime" type="bccommon:DateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>订购实例</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="OfferingKey">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element name="OfferingID" type="xs:integer" nillable="true">
+          <xs:annotation>
+            <xs:documentation>It is the offering ID which is defined in PC module.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="OfferingCode" type="xs:string"/>
+      </xs:choice>
+      <xs:element name="PurchaseSeq" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is the purchase seqence of this subscription. If an offering can be purchased more than once, system use this field to distinguish different offering subscription instance.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InstProperty">
+    <xs:sequence>
+      <xs:element name="PropCode" type="xs:string"/>
+      <xs:element name="PropType" type="xs:string"/>
+      <xs:choice>
+        <xs:element name="Value" type="xs:string"/>
+        <xs:element name="SubPropInst" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SubPropCode" type="xs:string"/>
+              <xs:element name="Value" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductInst">
+    <xs:sequence>
+      <xs:element name="ProductID" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>It is product ID which is defined in PC module.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PrimaryFlag" type="xs:string"/>
+      <xs:element name="PackageFlag" type="xs:string"/>
+      <xs:element name="ParentProdID" type="xs:integer" minOccurs="0"/>
+      <xs:element name="NetworkType" type="xs:string" minOccurs="0"/>
+      <xs:element name="ProductType" type="xs:string" minOccurs="0"/>
+      <xs:element name="PInstProperty" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="bccommon:InstProperty">
+              <xs:sequence>
+                <xs:element name="EffectiveTime" type="bccommon:DateTime" minOccurs="0"/>
+                <xs:element name="ExpirationTime" type="bccommon:DateTime" minOccurs="0"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="POfferingInst">
+    <xs:sequence>
+      <xs:element name="OfferingKey" type="bccommon:OfferingKey" nillable="true"/>
+      <xs:element name="BundledFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="OfferingClass" type="xs:string" minOccurs="0"/>
+      <xs:element name="ParentOfferingKey" type="bccommon:OfferingKey" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>If this offering is a member of a bundled offering, this field indicates the corresponding bundled offering subscription instance key.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Status" type="xs:string" minOccurs="0"/>
+      <xs:element name="TrialStartTime" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="TrialEndTime" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="ProductInst" type="bccommon:ProductInst" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="OfferingInstProperty" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="bccommon:InstProperty">
+              <xs:sequence>
+                <xs:element name="EffectiveTime" type="bccommon:DateTime" minOccurs="0"/>
+                <xs:element name="ExpirationTime" type="bccommon:DateTime" minOccurs="0"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OfferingInst">
+    <xs:sequence>
+      <xs:element name="OfferingKey" type="bccommon:OfferingKey" nillable="true"/>
+      <xs:element name="BundledFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="OfferingClass" type="xs:string" minOccurs="0"/>
+      <xs:element name="ParentOfferingKey" type="bccommon:OfferingKey" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>If this offering is a member of a bundled offering, this field indicates the corresponding bundled offering subscription instance key.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RelGOfferingKey" type="bccommon:OfferingKey" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>If this offering is group member offering, this field indicates the related offering subscription key on group level if it is existed.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Status" type="xs:string" minOccurs="0"/>
+      <xs:element name="TrialStartTime" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="TrialEndTime" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="ProductInst" type="bccommon:ProductInst" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="OInstProperty" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="bccommon:InstProperty">
+              <xs:sequence>
+                <xs:element name="EffectiveTime" type="bccommon:DateTime" minOccurs="0"/>
+                <xs:element name="ExpirationTime" type="bccommon:DateTime" minOccurs="0"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OfferingOwner">
+    <xs:sequence>
+      <xs:element name="OwnerType" type="xs:string"/>
+      <xs:element name="OwnerKey" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OfferingExpireMode">
+    <xs:sequence>
+      <xs:element name="Mode" type="xs:string"/>
+      <xs:element name="Time" type="bccommon:DateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>Statement</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="Statement">
+    <xs:sequence>
+      <xs:element name="SmtKey" type="xs:string"/>
+      <xs:element name="InvoiceType" type="xs:integer"/>
+      <xs:element name="SmtClass" type="xs:string"/>
+      <xs:element name="SmtInfo" type="bccommon:StatementInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatementInfo">
+    <xs:sequence>
+      <xs:element name="ContactInfo" type="bccommon:Contact" minOccurs="0"/>
+      <xs:element name="SmtMedium" type="bccommon:StatementMedium" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="SmtLang" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatementScenario">
+    <xs:choice>
+      <xs:element name="AccountKey" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="SubscriberKey" type="xs:string" maxOccurs="unbounded"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="StatementMedium">
+    <xs:sequence>
+      <xs:element name="BMCode" type="xs:string"/>
+      <xs:element name="BMType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>批量</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="CustomerForBatch">
+    <xs:sequence>
+      <xs:element name="CustType" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustSegment" type="xs:string" minOccurs="0"/>
+      <xs:element name="DFTPwd" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default password of this customer.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DFTWrittenLang" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default written language code of this customer.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DFTIVRLang" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default phonetic language code of this customer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DFTBillCycleType" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default billing cycle type of this customer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DFTCurrencyID" type="xs:integer" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The default currency code of this customer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustLevel" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="CustLoyalty" type="xs:string" minOccurs="0"/>
+      <xs:element name="DunningFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="CustProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountForBatch">
+    <xs:sequence>
+      <xs:element name="BillCycleType" type="xs:string" minOccurs="0"/>
+      <xs:element name="PaymentType" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>For example:
+Prepaid                                 Postpaid</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CurrencyID" type="xs:integer" minOccurs="0"/>
+      <xs:element name="BillLang" type="xs:string" minOccurs="0"/>
+      <xs:element name="DunningFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="LateFeeChargeable" type="xs:string" minOccurs="0"/>
+      <xs:element name="InitBalance" type="xs:long" minOccurs="0"/>
+      <xs:element name="CreditLimit" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LimitType" type="xs:string" minOccurs="0"/>
+            <xs:element name="LimitValue" type="xs:long"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FreeBillMedium" type="bccommon:FreeBillMedium" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="AcctProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriberForBatch">
+    <xs:sequence>
+      <xs:element name="SubBasicInfo" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="WrittenLang" type="xs:string"/>
+            <xs:element name="IVRLang" type="xs:string"/>
+            <xs:element name="SubLevel" type="xs:string" minOccurs="0"/>
+            <xs:element name="DunningFlag" type="xs:string" minOccurs="0"/>
+            <xs:element name="SubProperty" type="bccommon:SimpleProperty" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Brand" type="xs:string" minOccurs="0"/>
+      <xs:element name="NetworkType" type="xs:string" minOccurs="0"/>
+      <xs:element name="Status" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation/>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PaymentMode" type="xs:string" nillable="true"/>
+      <xs:element name="SubPassword" type="xs:string" minOccurs="0"/>
+      <xs:element name="ActiveTimeLimit" type="bccommon:DateTime" minOccurs="0"/>
+      <xs:element name="PrimaryIdentityType" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\wsdl\mpfs\ESB_MPFSTOPENG_V_1_0.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.accenture.com/schemas/TOPENG/ESB_MPFSTOPENG_V_1_0" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.accenture.com/schemas/TOPENG/ESB_MPFSTOPENG_V_1_0">
+  <xsd:complexType name="MMLCommandDet">
+    <xsd:sequence>
+      <xsd:element name="OperationType" type="xsd:string"/>
+      <xsd:element name="ExtParamList" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>All the parameters required for the execution of the command will be provided in this complex attribute in the name-value pair format. For example, if the command requires IMSI as an attribute, then the name will be "IMSI" and value be IMSI value like "444440123456789"</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ParameterInfo" type="AdditionalParam" minOccurs="0" maxOccurs="unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AdditionalParam">
+    <xsd:all>
+      <xsd:element name="Name" type="xsd:string"/>
+      <xsd:element name="Value" type="xsd:string"/>
+      <xsd:element name="DataType" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The parameter datatype. For example id the parameter is IMSI then datatype will be STRING.The values may be any datatype like string, integer,boolean etc or the value may be also ENUMERATION.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:all>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\wsdl\mpfs\CBSInterface_BC_ChangeSubStatus.xsd</con:url><con:content><![CDATA[<!--编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any)-->
+<xs:schema targetNamespace="http://www.huawei.com/bme/cbsinterface/cbscommon" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bccommon="http://www.huawei.com/bme/cbsinterface/bccommon">
+  <xs:import namespace="http://www.huawei.com/bme/cbsinterface/bccommon" schemaLocation="CBSInterface_BC_Common.xsd"/>
+  <xs:complexType name="ChangeSubStatusRequest">
+    <xs:sequence>
+      <xs:element name="SubAccessCode" type="bccommon:SubAccessCode"/>
+      <xs:element name="OpType" type="xs:string"/>
+      <xs:element name="OldStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="NewStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="HoldingDays" type="xs:integer" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>It is used in customer application scenario. For example, the customer wants to suspend his mobile and auto-resume after X days.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdditionalProperty" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>It is reserved for future extension</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="bccommon:SimpleProperty"/>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeSubStatusResult">
+    <xs:sequence>
+      <xs:element name="OldStatus" type="xs:string"/>
+      <xs:element name="NewStatus" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\o00440392\eclipse-workspace\demo_SPF_MPFS_MPFA_using_camel_cxf_amq\src\main\resources\wsdl\mpfs\CBSInterface_BC_ChangeSubIdentity.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.huawei.com/bme/cbsinterface/cbscommon" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bccommon="http://www.huawei.com/bme/cbsinterface/bccommon">
+  <xs:import namespace="http://www.huawei.com/bme/cbsinterface/bccommon" schemaLocation="CBSInterface_BC_Common.xsd"/>
+  <xs:complexType name="ChangeSubIdentityRequest">
+    <xs:sequence>
+      <xs:element name="SubAccessCode" type="bccommon:SubAccessCode"/>
+      <xs:choice>
+        <xs:element name="AddSubIdentity" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SubIdentityType" type="xs:string"/>
+              <xs:element name="SubIdentity" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DelSubIdentity" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SubIdentityType" type="xs:string"/>
+              <xs:element name="SubIdentity" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ModifySubIdentity" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OldSubIdentity" type="xs:string"/>
+              <xs:element name="OldSubIdentityType" type="xs:string"/>
+              <xs:element name="NewSubIdentity" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://O00440392:8090/mockMPFS_Server</con:endpoint><con:endpoint>https://10.130.46.6:8585/ESBMPFS/ESBMPFSPortTypeEndpoint</con:endpoint></con:endpoints><con:operation id="58c7fdbf-7989-4558-8e15-4acfa7c31481" isOneWay="false" action="ChangeSubIdentity" name="ChangeSubIdentity" bindingOperationName="ChangeSubIdentity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="800cbf22-9d0e-40b6-bdf1-c85038d17e51" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://18.218.49.58:8080/demo_SPF_MPFS_MPFA_using_camel_cxf_amq-0.0.1-SNAPSHOT/services/mpfs/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon" xmlns:esb="http://www.accenture.com/schemas/TOPENG/ESB_MPFSTOPENG_V_1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns9:ChangeSubIdentityRequestMsg xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns9="http://www.huawei.com/bme/cbsinterface/bcservices">\r
+         <RequestHeader xmlns:ns5="http://www.huawei.com/bme/cbsinterface/cbscommon">\r
+            <ns5:Version>1</ns5:Version>\r
+            <ns5:MessageSeq>1718618361</ns5:MessageSeq>\r
+            <ns5:OwnershipInfo>\r
+               <ns5:BEID>101</ns5:BEID>\r
+            </ns5:OwnershipInfo>\r
+            <ns5:AccessSecurity>\r
+               <ns5:LoginSystemCode>102</ns5:LoginSystemCode>\r
+               <ns5:Password>xyYSFeOUi5DagegPuCQmUQ==</ns5:Password>\r
+            </ns5:AccessSecurity>\r
+            <ns5:OperatorInfo>\r
+               <ns5:OperatorID>1000002681</ns5:OperatorID>\r
+            </ns5:OperatorInfo>\r
+            <ns5:AccessMode>3</ns5:AccessMode>\r
+            <ns5:ThirdPartyID>1001</ns5:ThirdPartyID>\r
+            <ns5:OrderID>210002058034843872</ns5:OrderID>\r
+         </RequestHeader>\r
+         <ns9:RequestBody>\r
+            <ChangeSubIdentityRequest xmlns:ns5="http://www.huawei.com/bme/cbsinterface/cbscommon">\r
+               <ns5:SubAccessCode xmlns:ns10="http://www.huawei.com/bme/cbsinterface/bccommon">\r
+                  <ns10:PrimaryIdentity>8175992747</ns10:PrimaryIdentity>\r
+               </ns5:SubAccessCode>\r
+               <ns5:ModifySubIdentity>\r
+                  <ns5:OldSubIdentity>621600085128255</ns5:OldSubIdentity>\r
+                  <ns5:OldSubIdentityType>2</ns5:OldSubIdentityType>\r
+                  <ns5:NewSubIdentity>621600019760618</ns5:NewSubIdentity>\r
+               </ns5:ModifySubIdentity>\r
+            </ChangeSubIdentityRequest>\r
+            <ns9:TopEngCommand xmlns:ns11="http://www.accenture.com/schemas/TOPENG/ESB_MPFSTOPENG_V_1_0">\r
+               <ns11:OperationType>MODIMSI</ns11:OperationType>\r
+               <ns11:ExtParamList>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>MCNFLAG</ns11:Name>\r
+                     <ns11:Value>FALSE</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>BLACKBERRYFLAG</ns11:Name>\r
+                     <ns11:Value>FALSE</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>ASKID</ns11:Name>\r
+                     <ns11:Value>210002058034843872</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>VMSFLAG</ns11:Name>\r
+                     <ns11:Value>FALSE</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>PRODUCTID</ns11:Name>\r
+                     <ns11:Value>10079</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>IMSIOLD</ns11:Name>\r
+                     <ns11:Value>621600085128255</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>BLACKBERRYTYPE</ns11:Name>\r
+                     <ns11:Value>0</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>CARDFLAG</ns11:Name>\r
+                     <ns11:Value>10</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>OFFERINGCODE</ns11:Name>\r
+                     <ns11:Value>10079</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>RBTFLAG</ns11:Name>\r
+                     <ns11:Value>FALSE</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>IMSI</ns11:Name>\r
+                     <ns11:Value>621600019760618</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>USERFLAG</ns11:Name>\r
+                     <ns11:Value>0</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+                  <ns11:ParameterInfo>\r
+                     <ns11:Name>MSISDN</ns11:Name>\r
+                     <ns11:Value>8175992747</ns11:Value>\r
+                     <ns11:DataType>String</ns11:DataType>\r
+                  </ns11:ParameterInfo>\r
+               </ns11:ExtParamList>\r
+            </ns9:TopEngCommand>\r
+         </ns9:RequestBody>\r
+      </ns9:ChangeSubIdentityRequestMsg>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="ChangeSubIdentity"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="406709e7-03c7-4f97-90e2-64a31588ead2" isOneWay="false" action="ChangeSubStatus" name="ChangeSubStatus" bindingOperationName="ChangeSubStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

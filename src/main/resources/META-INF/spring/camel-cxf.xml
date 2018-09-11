@@ -39,27 +39,27 @@
                      wsdlURL="classpath:wsdl/CRMInterfaceService.wsdl"/>
                      
     <cxf:cxfEndpoint id="downstreamCBS"
-                     address="http://localhost:8088/mockCBS_Server/"
+                     address="http://localhost:8080/mock_spf_server/mockCBS_Server"
                      serviceClass="com.huawei.bme.cbsinterface.cbs.accountmgr.CBSInterfaceAccountMgrServicePortType"
                      wsdlURL="classpath:wsdl/ESBaccountmgrService_v_1_0.wsdl"/>
                      
     <cxf:cxfEndpoint id="downstreamTOPENG"
-                     address="http://localhost:8089/mockTOPENG_Server/"
+                     address="http://localhost:8080/mock_topeng_server/mockTOPENG_Server"
                      serviceClass="topeng.esb.TopengEndpoint"
                      wsdlURL="classpath:wsdl/TOPENG.wsdl"/>
                      
     <cxf:cxfEndpoint id="downstreamCBSMPFS"
-                     address="http://localhost:8090/mockMPFS_Server/"
+                     address="http://localhost:8080/mock_mpfs_server/mockMPFS_Server"
                      serviceClass="com.huawei.bme.cbsinterface.bcservices.CBSInterfaceBusinessMgr"
                      wsdlURL="classpath:wsdl/ESB_BusinessMgr_MPFS_V_1_0_1.wsdl"/>
                      
     <cxf:cxfEndpoint id="downstreamCRM"
-                     address="http://localhost:8091/mockCRM_Server/"
+                     address="http://localhost:8080/mock_crm_server/mockCRM_Server"
                      serviceClass="ws.its.tabs.webservices.tabs_tibco_callback.tabs_tibco_callback_wsdl.TABSTIBCOCALLBACK"
                      wsdlURL="classpath:wsdl/TABS_TIBCO_CALLBACK.wsdl"/>
                      
     <cxf:cxfEndpoint id="downstreamCBS_2"
-                     address="http://localhost:8092/mockCBS_Server1/"
+                     address="http://localhost:8080/mock_cbs_server_1/mockCBS_Server1"
                      serviceClass="com.huawei.bme.cbsinterface.bcservices.BcServices"
                      wsdlURL="classpath:wsdl/ESB_BC_Services.wsdl"/>
 
