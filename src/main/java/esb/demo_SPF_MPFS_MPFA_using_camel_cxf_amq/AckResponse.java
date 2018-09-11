@@ -2,7 +2,6 @@ package esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq;
 
 import org.apache.camel.Exchange;
 
-import com.accenture.schemas.ResultData;
 import com.esb.crm.crmservice.bizmsg.ChangeAppendantProductRequestMsg;
 import com.esb.crm.crmservice.bizmsg.ChangeAppendantProductResultMsg;
 import com.esb.crm.crmservice.common.ResultHeader;

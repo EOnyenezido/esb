@@ -34,12 +34,13 @@ public class MPFA_US extends RouteBuilder {
         from("seda:incoming")
         	.routeId("mpfa_us").startupOrder(12) // starts this route before the one above
         	.to("log:mpfa")
-        	.split().method(SplitMPFA.class, "splitServiceChange").aggregationStrategy(new MPFAAggregationStrategy()) // splits the incoming message into different messages for different downstream systems
-        	.to("log:split")
+//        	.split().method(SplitMPFA.class, "splitServiceChange").aggregationStrategy(new MPFAAggregationStrategy()) // splits the incoming message into different messages for different downstream systems
+//        	.to("log:split")
         	.dynamicRouter().method(MPFADynamicRouter.class, "route") // routes the messages dynamically based on the result of the previous requests including rollbacks
-        	.end()
-        	.to("log:callback")
-        	.to("cxf:bean:downstreamCRM"); // sends the callback to the CRM system
+        	
+//        	.end()
+        	.to("log:callback");
+//        	.to("cxf:bean:downstreamCRM"); // sends the callback to the CRM system
         
     }
 }
