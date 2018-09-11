@@ -21,13 +21,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd          http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd          http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
     <!-- import the other spring xml files -->
     <import resource="classpath:META-INF/spring/camel-cxf.xml"/>
-    <!--     <import resource="classpath:META-INF/spring/camel-jms.xml"/> -->
+    <import resource="classpath:META-INF/spring/camel-jms.xml"/>
     <bean class="esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq.SPF_US" id="spfUSRoute"/>
     <bean class="esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq.SPF_DS" id="spfDSRoute"/>
     <bean class="esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq.MPFS_US" id="mpfsUSRoute"/>
     <bean class="esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq.TOPENG_DS" id="topengDSRoute"/>
     <bean class="esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq.CBS_MPFS_DS" id="cbsmpfsDSRoute"/>
     <bean class="esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq.MPFA_US" id="mpfaUSRoute"/>
+    <bean class="esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq.CBS_MPFA_DS" id="cbsmpfaDSRoute"/>
     <!-- initialize camel context via spring -->
     <camelContext id="camel" trace="false" xmlns="http://camel.apache.org/schema/spring">
         <!-- Custom variables -->
@@ -38,5 +39,6 @@
         <routeBuilder ref="topengDSRoute"/>
         <routeBuilder ref="cbsmpfsDSRoute"/>
         <routeBuilder ref="mpfaUSRoute"/>
+        <routeBuilder ref="cbsmpfaDSRoute"/>
     </camelContext>
 </beans>

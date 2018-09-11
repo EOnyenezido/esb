@@ -1,6 +1,8 @@
 package esb.demo_SPF_MPFS_MPFA_using_camel_cxf_amq;
 
 import org.apache.camel.Exchange;
+import org.apache.camel.ExchangePattern;
+import org.apache.camel.Pattern;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 
@@ -34,11 +36,24 @@ public class MPFA_US extends RouteBuilder {
         from("seda:incoming")
         	.routeId("mpfa_us").startupOrder(12) // starts this route before the one above
         	.to("log:mpfa")
-//        	.split().method(SplitMPFA.class, "splitServiceChange").aggregationStrategy(new MPFAAggregationStrategy()) // splits the incoming message into different messages for different downstream systems
+        	.process(new Processor() {
+				public void process(Exchange exchange) throws Exception {
+					System.out.println("THIS IS BEFORE PATTERN CHANGE: " + exchange.getPattern());
+					ExchangePattern pat = exchange.getPattern().InOut;
+					exchange.setPattern(pat);
+					System.out.println("THIS IS AFTER PATTERN CHANGE: " + exchange.getPattern());
+				}
+			})
+        	.split().method(SplitMPFA.class, "splitServiceChange")//.aggregationStrategy(new MPFAAggregationStrategy()) // splits the incoming message into different messages for different downstream systems
 //        	.to("log:split")
         	.dynamicRouter().method(MPFADynamicRouter.class, "route") // routes the messages dynamically based on the result of the previous requests including rollbacks
         	
-//        	.end()
+        	.end()
+        	.process(new Processor() {
+				public void process(Exchange exchange) throws Exception {
+				System.out.println("THIS IS BEFORE CALLBACK: " + exchange);
+				}
+				})
         	.to("log:callback");
 //        	.to("cxf:bean:downstreamCRM"); // sends the callback to the CRM system
         

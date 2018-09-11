@@ -24,17 +24,17 @@
          http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd">
 
     <cxf:cxfEndpoint id="spfEndpoint"
-                     address="http://localhost:9000/spf/"
+                     address="/spf"
                      serviceClass="com.huawei.bme.cbsinterface.cbs.accountmgr.CBSInterfaceAccountMgrServicePortType"
                      wsdlURL="classpath:wsdl/ESBaccountmgrService_v_1_0.wsdl"/>
                      
     <cxf:cxfEndpoint id="mpfsEndpoint"
-                     address="http://localhost:9001/mpfs/"
+                     address="/mpfs"
                      serviceClass="com.huawei.bme.cbsinterface.bcservices.CBSInterfaceBusinessMgr"
                      wsdlURL="classpath:wsdl/ESB_BusinessMgr_MPFS_V_1_0_1.wsdl"/>
     
     <cxf:cxfEndpoint id="mpfaEndpoint"
-                     address="http://localhost:9002/mpfa/"
+                     address="/mpfa"
                      serviceClass="com.esb.crm.crmservice.biz.CRMInterfaceServicePortType"
                      wsdlURL="classpath:wsdl/CRMInterfaceService.wsdl"/>
                      
@@ -57,5 +57,10 @@
                      address="http://localhost:8091/mockCRM_Server/"
                      serviceClass="ws.its.tabs.webservices.tabs_tibco_callback.tabs_tibco_callback_wsdl.TABSTIBCOCALLBACK"
                      wsdlURL="classpath:wsdl/TABS_TIBCO_CALLBACK.wsdl"/>
+                     
+    <cxf:cxfEndpoint id="downstreamCBS_2"
+                     address="http://localhost:8092/mockCBS_Server1/"
+                     serviceClass="com.huawei.bme.cbsinterface.bcservices.BcServices"
+                     wsdlURL="classpath:wsdl/ESB_BC_Services.wsdl"/>
 
 </beans>

@@ -15,59 +15,22 @@ import com.huawei.bme.cbsinterface.bcservices.FeeQuotationRequestMsg;
 import com.huawei.bme.cbsinterface.cbscommon.RequestHeader;
 import com.huawei.bme.cbsinterface.cbscommon.SecurityInfo;
 
-public class MPFADynamicRouter {
-	
-	protected ChangeAppendantProductRequestMsg reqMsg = new ChangeAppendantProductRequestMsg();
+public class MPFADynamicRouter {	
 	
 	public String route(Exchange exchange, String previous) {
-		if (previous == null) { // first time route is run there is no previous route
+		System.out.println("PREVIOUS: " + previous);
+		if (previous.contains("FeeQuotationRequestMsg")) { // fee quotation is first sent from the router
 			System.out.println("EXCHANGE: " + exchange);
 			System.out.println("IN: " + exchange.getIn());
-			System.out.println("BODY: " + exchange.getIn().getBody());
-			// Get the request message from the exchange
-			reqMsg = exchange.getIn().getBody(ChangeAppendantProductRequestMsg.class);
-			
-			// Generate a new FeeQuotation request message
-			FeeQuotationRequestMsg feeQuotation = new FeeQuotationRequestMsg();
-			
-			// Generate a request header for the FeeQuotation request message
-			RequestHeader feeQuotationRequestHeader = new RequestHeader();
-			feeQuotationRequestHeader.setVersion(reqMsg.getRequestHeader().getVersion());
-			feeQuotationRequestHeader.setOrderID(reqMsg.getRequestHeader().getTransactionId());
-			feeQuotationRequestHeader.setMessageSeq(reqMsg.getRequestHeader().getTransactionId());
-			SecurityInfo access = new SecurityInfo();
-			access.setLoginSystemCode("ESB");
-			access.setPassword("supersecurepassword");
-			feeQuotationRequestHeader.setAccessSecurity(access);
-			
-			// Generate a request body for the request message
-			FeeQuotationRequest feeQuotationRequestBody = new FeeQuotationRequest();
-			ChargeObj charge = new ChargeObj();
-			SubAccessCode code = new SubAccessCode();
-			code.setPrimaryIdentity("7035382411");
-			charge.setSubAccessCode(code);
-			feeQuotationRequestBody.setChargeObj(charge);
-			ChargeElement chargeElement = new ChargeElement();
-			FeeAmount amount = new FeeAmount();			
-			amount.setChargeAmt(2000);
-			amount.setChargeCode("NGN");
-			amount.setCurrencyID(BigInteger.ONE);
-			List<FeeAmount> feeAmount = chargeElement.getFeeAmount();
-			feeAmount.add(amount);
-			feeQuotationRequestBody.setChargeElement(chargeElement);
-			
-			// Add the request header and request body to the request message
-			feeQuotation.setFeeQuotationRequest(feeQuotationRequestBody);
-			feeQuotation.setRequestHeader(feeQuotationRequestHeader);
-			
-			// Add the FeeQuotation message to the exchange
-			exchange.getIn().setBody(feeQuotation, FeeQuotationRequestMsg.class);
+			System.out.println("BODY: " + exchange.getIn().getBody());			
 			
 			return "jms:cbs_mpfa_ds"; // return the queue for the CBS_MPFA_DS route that will invoke CBS downstream for FeeQuotation
 			
-		} else if ("mock://a".equals(previous)) {
-			return "language://simple:Bye ${body}";
-		} else {
+		} 
+//		else if ("mock://a".equals(previous)) {
+//			return "language://simple:Bye ${body}";
+//		}
+		else {
 			return null;
 		}
 	}

@@ -4,6 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>esb</groupId>
   <artifactId>demo_SPF_MPFS_MPFA_using_camel_cxf_amq</artifactId>
+  <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>A Demo of SPF, MPFS and MPFA orchestration using Apache Camel, CXF and AMQ</name>
   <properties>
@@ -40,7 +41,7 @@
     </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-transports-http-jetty</artifactId>
+      <artifactId>cxf-rt-transports-http</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.activemq</groupId>
@@ -50,6 +51,11 @@
       <groupId>org.apache.xbean</groupId>
       <artifactId>xbean-spring</artifactId>
     </dependency>
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-web</artifactId>
+    	<version>5.0.9.RELEASE</version>
+	</dependency>    
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
